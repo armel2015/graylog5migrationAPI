@@ -1,0 +1,51 @@
+{
+  "id": "string",
+  "parameters": [
+    {
+      "name": "string",
+      "data_type": "string",
+      "description": "string",
+      "binding": {
+        "type": "string"
+      },
+      "optional": "boolean",
+      "default_value": {},
+      "title": "string",
+      "type": "string"
+    }
+  ],
+  "queries": [
+    {
+      "filter": {
+        "filters": [
+          "urn:jsonschema:org:graylog:plugins:views:search:Filter"
+        ],
+        "type": "string"
+      },
+      "timerange": {
+        "type": "string"
+      },
+      "query": {},
+      "id": "string",
+      "filters": [
+        {}
+      ],
+      "search_types": [
+        {
+          "filter": "object",
+          "timerange": "any",
+          "streams": [
+            "string"
+          ],
+          "query": {},
+          "name": "string",
+          "id": "string",
+          "filters": [
+            "urn:jsonschema:org:graylog:plugins:views:search:searchfilters:model:UsedSearchFilter"
+          ],
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

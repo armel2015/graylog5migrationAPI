@@ -1,0 +1,26 @@
+{
+  "index_optimization_max_num_segments": "integer",
+  "replicas": "integer",
+  "field_type_refresh_interval": "string",
+  "description": "string",
+  "index_optimization_disabled": "boolean",
+  "can_be_default": "boolean",
+  "creation_date": "string",
+  "title": "string",
+  "retention_strategy_class": "string",
+  "retention_strategy": {
+    "max_number_of_indices": "integer",
+    "type": "string"
+  },
+  "writable": "boolean",
+  "shards": "integer",
+  "default": "boolean",
+  "index_analyzer": "string",
+  "rotation_strategy": {
+    "type": "string"
+  },
+  "index_template_type": "string",
+  "id": "string",
+  "rotation_strategy_class": "string",
+  "index_prefix": "string"
+}

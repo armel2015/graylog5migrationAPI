@@ -1,0 +1,2689 @@
+{
+  "total": 81,
+  "streams": [
+    {
+      "id": "5d8c7bc449cc23000cd68114",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Contact API",
+      "created_at": "2019-09-26T08:50:12.407Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5d8c7bc449cc23000cd68114",
+          "description": "",
+          "id": "5d8c7bd649cc23000cd6812b",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.contact"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.contact",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "659525183cca230012ecab7d",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "OR",
+      "description": "Docker version of the Mytmp PNR app (Conztanz app).",
+      "created_at": "2024-01-03T09:12:56.322Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "container_name",
+          "stream_id": "659525183cca230012ecab7d",
+          "description": "",
+          "id": "659525533cca230012ecabcd",
+          "type": 1,
+          "inverted": false,
+          "value": "mytmp-pnr-legacy"
+        },
+        {
+          "field": "container_name",
+          "stream_id": "659525183cca230012ecab7d",
+          "description": "",
+          "id": "659525713cca230012ecabf0",
+          "type": 1,
+          "inverted": false,
+          "value": "mytmp-pnr-legacy-proxy"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.mytmp-pnr-legacy",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5b17c803fc4bf6393508261e",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Travel IBE Business logs from production ESB",
+      "created_at": "2018-06-06T11:39:47.441Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5b17c803fc4bf6393508261e",
+          "description": "All logs from \"travelibe\" application",
+          "id": "5b17c859fc4bf6393508267e",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.travelibe"
+        },
+        {
+          "field": "audience",
+          "stream_id": "5b17c803fc4bf6393508261e",
+          "description": "Only catch \"Business\" logs",
+          "id": "5b17c902fc4bf63935082747",
+          "type": 1,
+          "inverted": false,
+          "value": "business"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.travelibe.business",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5d12144efc4bf62614991022",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Amadeus MQ Nego blocks feed.",
+      "created_at": "2019-06-25T12:32:14.887Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5d12144efc4bf62614991022",
+          "description": "",
+          "id": "5d12145ffc4bf62614991037",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.amadeus-mq-nego-feed"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.amadeus-mq-nego-feed",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "60a7ac36cd46a200128ffd80",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "HR dashboard for employees",
+      "created_at": "2021-05-21T12:48:54.582Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "60a7ac36cd46a200128ffd80",
+          "description": "",
+          "id": "60a7ac46cd46a200128ffd94",
+          "type": 1,
+          "inverted": false,
+          "value": "web.hr-dashboard"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.hr-dashboard",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5bf430edfc4bf606cb020346",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Crew Meal application",
+      "created_at": "2018-11-20T16:06:05.661Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5bf430edfc4bf606cb020346",
+          "description": "",
+          "id": "5bf430fdfc4bf606cb020359",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.crewmeal"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.crewmeal",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ab8b6e0fc4bf609f3a3199a",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Altea Web Services mule application",
+      "created_at": "2018-03-26T09:01:20.440Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ab8b6e0fc4bf609f3a3199a",
+          "description": "",
+          "id": "5ab8b6eafc4bf609f3a319a8",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.alteawebservices"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.alteawebservices",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a211d79fc4bf60435bf96ba",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "The PHP web app gateway to Amadeus eRetail DX, the airline IBE",
+      "created_at": "2017-12-01T09:14:33.448Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5a211d79fc4bf60435bf96ba",
+          "description": "",
+          "id": "5a211d9afc4bf60435bf96df",
+          "type": 1,
+          "inverted": false,
+          "value": "dxconnector"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.dxconnector",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5b347e0cfc4bf6733ac7f5d0",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all business messages from the productive BTN interface in the ESB",
+      "created_at": "2018-06-28T06:19:56.883Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5b347e0cfc4bf6733ac7f5d0",
+          "description": "",
+          "id": "5b347e91fc4bf6733ac7f664",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.btninterface"
+        },
+        {
+          "field": "audience",
+          "stream_id": "5b347e0cfc4bf6733ac7f5d0",
+          "description": "",
+          "id": "5b347e9afc4bf6733ac7f670",
+          "type": 1,
+          "inverted": false,
+          "value": "business"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.btn.business (deprecated)",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5cdc16a2fc4bf60b0782b6a3",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "OR",
+      "description": "Extranet API - This contains both the legacy Mule & new Node APIs",
+      "created_at": "2019-05-15T13:39:46.070Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5cdc16a2fc4bf60b0782b6a3",
+          "description": "",
+          "id": "5cdc16adfc4bf60b0782b6b2",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.extranet"
+        },
+        {
+          "field": "app_name",
+          "stream_id": "5cdc16a2fc4bf60b0782b6a3",
+          "description": "",
+          "id": "65f83334434b230012b1a2e2",
+          "type": 1,
+          "inverted": false,
+          "value": "api.extranet"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.extranet & api.extranet",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5de626f4504d230014a6e130",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Amadeus PNR Services",
+      "created_at": "2019-12-03T09:12:20.730Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5de626f4504d230014a6e130",
+          "description": "",
+          "id": "5de626fe504d230014a6e142",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.amadeus-pnr-services"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.amadeus-pnr-services",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5cdd22bafc4bf60b0783dbb9",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Amadeus PNR feed",
+      "created_at": "2019-05-16T08:43:38.013Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5cdd22bafc4bf60b0783dbb9",
+          "description": "",
+          "id": "5cdd22c4fc4bf60b0783dbc8",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.amadeus-mq-pnr-feed"
+        }
+      ],
+      "alert_conditions": [
+        {
+          "id": "b77ee0bc-b79e-4c99-89b0-c6e4ee71d7d7",
+          "type": "message_count",
+          "creator_user_id": "ckoenig",
+          "created_at": "2019-05-20T09:43:23.276+0000",
+          "parameters": {
+            "backlog": 0,
+            "repeat_notifications": false,
+            "query": "*",
+            "grace": 0,
+            "threshold_type": "LESS",
+            "threshold": 1,
+            "time": 15
+          },
+          "title": "No PNR feed message received in 15 minutes"
+        }
+      ],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.amadeus-mq-pnr-feed",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5bd31f1cfc4bf606cbde2f28",
+      "creator_user_id": "agomri",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Logs for all actions related to the payment drupal module",
+      "created_at": "2018-10-26T14:05:16.968Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "ctxt_order_id",
+          "stream_id": "5bd31f1cfc4bf606cbde2f28",
+          "description": "",
+          "id": "5be9916ffc4bf606cbf680dc",
+          "type": 5,
+          "inverted": false,
+          "value": ""
+        },
+        {
+          "field": "audience",
+          "stream_id": "5bd31f1cfc4bf606cbde2f28",
+          "description": "",
+          "id": "5c459448fc4bf606cb5a43a6",
+          "type": 1,
+          "inverted": false,
+          "value": "business"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "travel-ibe.payment",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "60a235fecd46a20012898216",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Parking API",
+      "created_at": "2021-05-17T09:23:10.671Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "60a235fecd46a20012898216",
+          "description": "",
+          "id": "60a23615cd46a20012898232",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.parking"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.parking",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5d372d42fc4bf62614c33c5e",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Flibco validation results",
+      "created_at": "2019-07-23T15:52:34.864Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "source",
+          "stream_id": "5d372d42fc4bf62614c33c5e",
+          "description": "Load balanced production mule instances",
+          "id": "5d372d76fc4bf62614c33c99",
+          "type": 2,
+          "inverted": false,
+          "value": "mule[0-9]?p"
+        },
+        {
+          "field": "app_name",
+          "stream_id": "5d372d42fc4bf62614c33c5e",
+          "description": "tmptours API",
+          "id": "5d372d95fc4bf62614c33ccc",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.tmptours"
+        },
+        {
+          "field": "request_path",
+          "stream_id": "5d372d42fc4bf62614c33c5e",
+          "description": "PNR Check service",
+          "id": "5d372db1fc4bf62614c33ced",
+          "type": 2,
+          "inverted": false,
+          "value": "(\\/tmptours\\/pnr\\/)*(\\/check)"
+        },
+        {
+          "field": "audience",
+          "stream_id": "5d372d42fc4bf62614c33c5e",
+          "description": "",
+          "id": "5d372dc3fc4bf62614c33d01",
+          "type": 1,
+          "inverted": false,
+          "value": "business"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.tmptours.flibco.business",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a573401fc4bf60435fa31a1",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Web servers error logs",
+      "created_at": "2018-01-11T09:53:05.015Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "type",
+          "stream_id": "5a573401fc4bf60435fa31a1",
+          "description": "",
+          "id": "5a573480fc4bf60435fa3236",
+          "type": 1,
+          "inverted": false,
+          "value": "http_error_log"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "http.error",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ac7543afc4bf609f3b2f178",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "ESB CRM API",
+      "created_at": "2018-04-06T11:04:26.223Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ac7543afc4bf609f3b2f178",
+          "description": "",
+          "id": "5ac7544afc4bf609f3b2f18d",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.crm"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.crm",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "61f901cd3cca230012b851ed",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "API booking info",
+      "created_at": "2022-02-01T09:47:57.975Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "61f901cd3cca230012b851ed",
+          "description": "",
+          "id": "61f901da3cca230012b851fd",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.bookinginfo"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.bookinginfo",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5f1ab3b94a402100138bb1c9",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Contains logs from the edocuments backoffice",
+      "created_at": "2020-07-24T10:11:05.930Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5f1ab3b94a402100138bb1c9",
+          "description": "",
+          "id": "5f1ab3d84a402100138bb1f2",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.edocument-backoffice"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.edocument-backoffice",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "59dc8a29fc4bf60bd6a49ddb",
+      "creator_user_id": "snsakala",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "tmptours api ESB application log ",
+      "created_at": "2017-10-10T08:51:53.966Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "59dc8a29fc4bf60bd6a49ddb",
+          "description": "",
+          "id": "59dc8a43fc4bf60bd6a49df8",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.tmptours"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.tmptours",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a3bc35dfc4bf60435dc75a9",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Mytmp ESB application",
+      "created_at": "2017-12-21T14:21:17.778Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5a3bc35dfc4bf60435dc75a9",
+          "description": "",
+          "id": "5a3bc36efc4bf60435dc75bd",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.mytmp"
+        }
+      ],
+      "alert_conditions": [
+        {
+          "id": "3ebd358f-fcde-4a65-9e77-353ab4325714",
+          "type": "message_count",
+          "creator_user_id": "ckoenig",
+          "created_at": "2018-10-19T08:47:59.864+0000",
+          "parameters": {
+            "backlog": 0,
+            "repeat_notifications": false,
+            "grace": 0,
+            "threshold_type": "MORE",
+            "threshold": 150,
+            "time": 5
+          },
+          "title": "Anormal high amount of requests on Mytmp API"
+        }
+      ],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.mytmp",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5c9897d4fc4bf64bfa7627a1",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Eurocontrol MQ integration",
+      "created_at": "2019-03-25T08:56:52.882Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5c9897d4fc4bf64bfa7627a1",
+          "description": "",
+          "id": "5c9897e0fc4bf64bfa7627b1",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.eurocontrol"
+        }
+      ],
+      "alert_conditions": [
+        {
+          "id": "f5ab99e1-5813-4a60-98c8-678e446121d7",
+          "type": "com.alexjck.plugins.conditional.alerts.ConditionalCountAlertCondition",
+          "creator_user_id": "ckoenig",
+          "created_at": "2019-07-09T06:29:53.837+0000",
+          "parameters": {
+            "backlog": 0,
+            "repeat_notifications": false,
+            "query": "\"Message received\"",
+            "grace": 0,
+            "threshold_type": "LESS",
+            "threshold": 1,
+            "time": 120
+          },
+          "title": "No Eurocontrol message since 2h"
+        }
+      ],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.eurocontrol",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5d94517849cc23000cdf54fa",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Netline PPS integration",
+      "created_at": "2019-10-02T07:27:52.013Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5d94517849cc23000cdf54fa",
+          "description": "",
+          "id": "5d94518349cc23000cdf5507",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.netline"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.netline",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5efa59f2504d230014f5bd6f",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "OR",
+      "description": "Revenue Accounting DW Feeds API",
+      "created_at": "2020-06-29T21:15:30.271Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5efa59f2504d230014f5bd6f",
+          "description": "",
+          "id": "5efa5a03504d230014f5bd8b",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.apra"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.apra",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5fff25ea4a402100124eaa68",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "PNL application (pnl.tmp.lu)",
+      "created_at": "2021-01-13T16:55:06.138Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5fff25ea4a402100124eaa68",
+          "description": "",
+          "id": "5fff25f74a402100124eaa79",
+          "type": 1,
+          "inverted": false,
+          "value": "web.pnl"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.pnl",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a573410fc4bf60435fa31b5",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Web servers access logs",
+      "created_at": "2018-01-11T09:53:20.936Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "type",
+          "stream_id": "5a573410fc4bf60435fa31b5",
+          "description": "",
+          "id": "5a573441fc4bf60435fa31ed",
+          "type": 1,
+          "inverted": false,
+          "value": "http_access_log"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "http.access",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "646da579b9c3a20012f845c9",
+      "is_default": false
+    },
+    {
+      "id": "61f901543cca230012b85136",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "API guides-webform",
+      "created_at": "2022-02-01T09:45:56.223Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "61f901543cca230012b85136",
+          "description": "",
+          "id": "61f901793cca230012b85164",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.guides-webform"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.guides-webform",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5fc524364a402100120a0500",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Voucher API",
+      "created_at": "2020-11-30T16:56:22.028Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5fc524364a402100120a0500",
+          "description": "",
+          "id": "5fc5244c4a402100120a0520",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.voucher"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.voucher",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "64f1f3973cca230011c65c3e",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Loyalty API",
+      "created_at": "2023-09-01T14:22:15.898Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "64f1f3973cca230011c65c3e",
+          "description": "",
+          "id": "64f1f3a73cca230011c65c56",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.loyalty"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.loyalty",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ece8ced504d230014c0a21a",
+      "creator_user_id": "nrobert",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all messages from the productive content hub in the Mule Job ESB",
+      "created_at": "2020-05-27T15:53:17.157Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ece8ced504d230014c0a21a",
+          "description": "Stream containing all messages from the Production content hub indexer\n",
+          "id": "5ece8d04504d230014c0a23e",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.content-hub-indexer"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.content-hub.job",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5b976cb4fc4bf6733a33324a",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Tracking of Mytmp events.",
+      "created_at": "2018-09-11T07:20:20.535Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5b976cb4fc4bf6733a33324a",
+          "description": "",
+          "id": "5b976cc0fc4bf6733a33325a",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.mytmp"
+        },
+        {
+          "field": "audience",
+          "stream_id": "5b976cb4fc4bf6733a33324a",
+          "description": "",
+          "id": "5b976cc9fc4bf6733a333265",
+          "type": 1,
+          "inverted": false,
+          "value": "tracking"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.mytmp.tracking",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a9e9dd1fc4bf60435479ca4",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "OR",
+      "description": "Paylink app messages",
+      "created_at": "2018-03-06T13:55:29.481Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5a9e9dd1fc4bf60435479ca4",
+          "description": "",
+          "id": "5a9e9dddfc4bf60435479cb3",
+          "type": 1,
+          "inverted": false,
+          "value": "web.paylink"
+        },
+        {
+          "field": "appName",
+          "stream_id": "5a9e9dd1fc4bf60435479ca4",
+          "description": "",
+          "id": "5af05559fc4bf63935dd6243",
+          "type": 1,
+          "inverted": false,
+          "value": "paylink"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.paylink",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5af054dbfc4bf63935dd61b5",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Interimaires web application",
+      "created_at": "2018-05-07T13:30:03.874Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5af054dbfc4bf63935dd61b5",
+          "description": "",
+          "id": "5af054e6fc4bf63935dd61c2",
+          "type": 1,
+          "inverted": false,
+          "value": "web.interimaires"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.interimaires",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ac75f56fc4bf609f3b2fd9b",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "ESB dcs-dw-feeds",
+      "created_at": "2018-04-06T11:51:50.849Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ac75f56fc4bf609f3b2fd9b",
+          "description": "",
+          "id": "5ac75f69fc4bf609f3b2fdb2",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.dcsdwfeeds"
+        }
+      ],
+      "alert_conditions": [
+        {
+          "id": "6919b5ba-1fcb-4d2d-8c50-b8d27c9a14a5",
+          "type": "com.alexjck.plugins.conditional.alerts.ConditionalCountAlertCondition",
+          "creator_user_id": "ckoenig",
+          "created_at": "2018-04-26T08:12:50.245+0000",
+          "parameters": {
+            "backlog": 0,
+            "repeat_notifications": false,
+            "query": "\"Successfully wrote file\"",
+            "grace": 0,
+            "threshold_type": "LESS",
+            "threshold": 2,
+            "time": 1500
+          },
+          "title": "DCS feed wasn't exported"
+        }
+      ],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.dcsdwfeeds",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "6266551c3cca2300126fa8f2",
+      "creator_user_id": "jmeenankada",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "eCanteen/StaffMeal app",
+      "created_at": "2022-04-25T08:00:28.107Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "6266551c3cca2300126fa8f2",
+          "description": "",
+          "id": "626655bf3cca230012704db0",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.ecanteen"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "api.ecanteen",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a2abe1cfc4bf60435ca04fb",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "tmp API on MULEP",
+      "created_at": "2017-12-08T16:30:20.678Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5a2abe1cfc4bf60435ca04fb",
+          "description": "",
+          "id": "5a2abe2efc4bf60435ca0510",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.tmp"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.tmp",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ac75ec6fc4bf609f3b2fcf8",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Backoffice mule application",
+      "created_at": "2018-04-06T11:49:26.992Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ac75ec6fc4bf609f3b2fcf8",
+          "description": "",
+          "id": "5ac75ee0fc4bf609f3b2fd16",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.backoffice"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.backoffice",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5b17c6cafc4bf639350824c0",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Blank API Business logs from production ESB",
+      "created_at": "2018-06-06T11:34:34.036Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "env",
+          "stream_id": "5b17c6cafc4bf639350824c0",
+          "description": "Keep only logs coming from Mule Production (balanced instances)",
+          "id": "5b17c714fc4bf63935082514",
+          "type": 2,
+          "inverted": false,
+          "value": "prd"
+        },
+        {
+          "field": "audience",
+          "stream_id": "5b17c6cafc4bf639350824c0",
+          "description": "Only catch \"Business\" logs",
+          "id": "5b17c73efc4bf63935082543",
+          "type": 1,
+          "inverted": false,
+          "value": "business"
+        },
+        {
+          "field": "app_name",
+          "stream_id": "5b17c6cafc4bf639350824c0",
+          "description": "All logs from \"Blank API\" application",
+          "id": "5b17c751fc4bf6393508255a",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.blankapi"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.blankapi.business",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "619627bacd46a2001261606e",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "tmp-travel API",
+      "created_at": "2021-11-18T10:15:22.964Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "619627bacd46a2001261606e",
+          "description": "",
+          "id": "619627c8cd46a20012616085",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.tmp-travel"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.tmp-travel",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "62f210c63cca2300120ce533",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Traefik reverse proxies",
+      "created_at": "2022-08-09T07:46:14.596Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "container_name",
+          "stream_id": "62f210c63cca2300120ce533",
+          "description": "",
+          "id": "62f210d73cca2300120ce549",
+          "type": 1,
+          "inverted": false,
+          "value": "traefik"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "traefik",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5fc559224a402100120a43a8",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Flex MTOM calculator logs",
+      "created_at": "2020-11-30T20:42:10.273Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5fc559224a402100120a43a8",
+          "description": "",
+          "id": "5fc5594d4a402100120a43e0",
+          "type": 1,
+          "inverted": false,
+          "value": "flightops.Flex_MTOM_Manager"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "flightops.Flex_MTOM_Manager",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "62f0c5853cca2300120b26b4",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Staff page (staff.tmp.lu)",
+      "created_at": "2022-08-08T08:12:53.528Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "62f0c5853cca2300120b26b4",
+          "description": "",
+          "id": "62f0c5913cca2300120b26c3",
+          "type": 1,
+          "inverted": false,
+          "value": "web.staff"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.staff",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5f574f034a40210013d3908b",
+      "creator_user_id": "agomri",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream used in order to store arrival guides logs",
+      "created_at": "2020-09-08T09:29:39.074Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5f574f034a40210013d3908b",
+          "description": "",
+          "id": "5f574f1f4a40210013d390ae",
+          "type": 1,
+          "inverted": false,
+          "value": "web.destinations-overview"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.destinations-overview",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5c04efdefc4bf606cb1427c9",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Ecard web app",
+      "created_at": "2018-12-03T08:57:02.287Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5c04efdefc4bf606cb1427c9",
+          "description": "",
+          "id": "5c04efe8fc4bf606cb1427d6",
+          "type": 1,
+          "inverted": false,
+          "value": "web.ecard"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.ecard",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ca5b271fc4bf64bfa846046",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Instant Search API",
+      "created_at": "2019-04-04T07:29:53.663Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ca5b271fc4bf64bfa846046",
+          "description": "",
+          "id": "5ca5b280fc4bf64bfa846059",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.instantsearch"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.instantsearch",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5d021291fc4bf62614877f80",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "GS RealTime API",
+      "created_at": "2019-06-13T09:08:33.290Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5d021291fc4bf62614877f80",
+          "description": "",
+          "id": "5d02129bfc4bf62614877f8c",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.gsrealtime"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.gsrealtime",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5aaf893dfc4bf6043559f575",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "MyIDTravel mule application",
+      "created_at": "2018-03-19T09:56:13.947Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5aaf893dfc4bf6043559f575",
+          "description": "",
+          "id": "5aaf8949fc4bf6043559f582",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.myidtravel"
+        }
+      ],
+      "alert_conditions": [
+        {
+          "id": "a8808be1-6718-4224-8c45-f0d1a9312ab1",
+          "type": "com.alexjck.plugins.conditional.alerts.ConditionalCountAlertCondition",
+          "creator_user_id": "ckoenig",
+          "created_at": "2018-03-22T15:18:17.687+0000",
+          "parameters": {
+            "backlog": 0,
+            "repeat_notifications": false,
+            "query": "\"Employee data upload finished\"",
+            "grace": 1200,
+            "threshold_type": "LESS",
+            "threshold": 1,
+            "time": 1500
+          },
+          "title": "MyIdTravel daily employee export didn't run"
+        }
+      ],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.myidtravel",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5abce52cfc4bf609f3a7a1e2",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Interimaires API",
+      "created_at": "2018-03-29T13:07:56.070Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5abce52cfc4bf609f3a7a1e2",
+          "description": "",
+          "id": "5abce539fc4bf609f3a7a1f3",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.interimaires"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.interimaires",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ab3d201fc4bf609f39dcb6f",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Partners API",
+      "created_at": "2018-03-22T15:55:45.168Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ab3d201fc4bf609f39dcb6f",
+          "description": "",
+          "id": "5ab3d20efc4bf609f39dcb7e",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.partners"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.partners",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5cb05cadfc4bf64bfa8ff430",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Apache Load Balancer for Mule",
+      "created_at": "2019-04-12T09:38:53.950Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "source",
+          "stream_id": "5cb05cadfc4bf64bfa8ff430",
+          "description": "",
+          "id": "5cb05cc0fc4bf64bfa8ff446",
+          "type": 1,
+          "inverted": false,
+          "value": "mulelbp.in.tmp.lu"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "mulelbp",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5fd33d194a402100121ab4ca",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "OR",
+      "description": "Copy BAFDA files to Flight Data People SFTP, IATA FDX",
+      "created_at": "2020-12-11T09:34:17.215Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5fd33d194a402100121ab4ca",
+          "description": "",
+          "id": "5fd33d194a402100121ab4cb",
+          "type": 1,
+          "inverted": false,
+          "value": "flightops.FlightDataPeopleFileTransferService"
+        },
+        {
+          "field": "app_name",
+          "stream_id": "5fd33d194a402100121ab4ca",
+          "description": "",
+          "id": "61c1b4cf3cca230012722703",
+          "type": 1,
+          "inverted": false,
+          "value": "flightops.FDM_SFTP_Service"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "flightops.FDM_SFTP_Service",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "60b62f78cd46a20012a1365f",
+      "creator_user_id": "nrobert",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Booking API",
+      "created_at": "2021-06-01T13:00:40.972Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "60b62f78cd46a20012a1365f",
+          "description": "",
+          "id": "60b6300dcd46a20012a13717",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.booking"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.bookingapi",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5b17c8a0fc4bf639350826d1",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Blank API logs from production ESB",
+      "created_at": "2018-06-06T11:42:24.561Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "env",
+          "stream_id": "5b17c8a0fc4bf639350826d1",
+          "description": "Keep only logs coming from Mule Production (balanced instances)",
+          "id": "5b17c8a0fc4bf639350826d2",
+          "type": 2,
+          "inverted": false,
+          "value": "prd"
+        },
+        {
+          "field": "app_name",
+          "stream_id": "5b17c8a0fc4bf639350826d1",
+          "description": "All logs from \"Blank API\" application",
+          "id": "5b17c8a0fc4bf639350826d4",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.blankapi"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.blankapi",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "64ad0be33cca2300115d1dc5",
+      "creator_user_id": "nrobert",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Fuel Efficiency Collector logs",
+      "created_at": "2023-07-11T07:59:31.198Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "64ad0be33cca2300115d1dc5",
+          "description": "",
+          "id": "64ad0c213cca2300115d1e25",
+          "type": 1,
+          "inverted": false,
+          "value": "flightops.FuelEfficiencyCollector"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "flightops.FPM_Service",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5da5a75f49cc23000cf2a5c3",
+      "creator_user_id": "roschmitz",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all messages from the productive content hub in the ESB",
+      "created_at": "2019-10-15T11:02:55.034Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5da5a75f49cc23000cf2a5c3",
+          "description": "All messages from esb.content-hub application",
+          "id": "5da5a75f49cc23000cf2a5c4",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.content-hub"
+        },
+        {
+          "field": "env",
+          "stream_id": "5da5a75f49cc23000cf2a5c3",
+          "description": "Comes from one of the production Docker Mule instance",
+          "id": "5da5a75f49cc23000cf2a5c5",
+          "type": 1,
+          "inverted": false,
+          "value": "prd"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.content-hub",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ee21b14504d230014d8335e",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Confirmation and Evoucher documents for LGIT",
+      "created_at": "2020-06-11T11:52:52.970Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ee21b14504d230014d8335e",
+          "description": "",
+          "id": "5ee21b28504d230014d83376",
+          "type": 1,
+          "inverted": false,
+          "value": "web.edocuments"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.edocuments",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ac7607dfc4bf609f3b2fee5",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "ESB Efb Etl",
+      "created_at": "2018-04-06T11:56:45.121Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ac7607dfc4bf609f3b2fee5",
+          "description": "",
+          "id": "5ac7609ffc4bf609f3b2ff0c",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.efbetl"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.efbetl",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "6112524d4a402100121c24c6",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Blank info service API",
+      "created_at": "2021-08-10T10:17:49.875Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "6112524d4a402100121c24c6",
+          "description": "",
+          "id": "611252634a402100121c24e0",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.blank-info-service"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.blank-info-service",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "60f6ca8dcd46a20012f39699",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "QR Code displayer.",
+      "created_at": "2021-07-20T13:07:25.524Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "60f6ca8dcd46a20012f39699",
+          "description": "",
+          "id": "60f6ca97cd46a20012f396ac",
+          "type": 1,
+          "inverted": false,
+          "value": "web.qrcode"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.qrcode",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5d9df64b49cc23000cea16dc",
+      "creator_user_id": "roschmitz",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all messages from the productive XFT in the ESB",
+      "created_at": "2019-10-09T15:01:31.411Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5d9df64b49cc23000cea16dc",
+          "description": "All messages from esb.xft application",
+          "id": "5d9df64b49cc23000cea16dd",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.xft"
+        },
+        {
+          "field": "env",
+          "stream_id": "5d9df64b49cc23000cea16dc",
+          "description": "Comes from one of the production Mule instance",
+          "id": "5d9df64b49cc23000cea16de",
+          "type": 1,
+          "inverted": false,
+          "value": "prd"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.xft",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "000000000000000000000002",
+      "creator_user_id": "admin",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all events created by Graylog",
+      "created_at": "2019-11-28T08:18:34.562Z",
+      "disabled": false,
+      "rules": [],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "All events",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "5ddf82da49cc2300126b7ee2",
+      "is_default": false
+    },
+    {
+      "id": "5ac7635cfc4bf609f3b30208",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "ESB ecard",
+      "created_at": "2018-04-06T12:09:00.945Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ac7635cfc4bf609f3b30208",
+          "description": "",
+          "id": "5ac7636dfc4bf609f3b3021c",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.ecard"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.ecard",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "6440fd8bb9c3a20012b623d8",
+      "creator_user_id": "rcemi",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Garage logs",
+      "created_at": "2023-04-20T08:53:31.091Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "6440fd8bb9c3a20012b623d8",
+          "description": "",
+          "id": "6440fdbfb9c3a20012b62449",
+          "type": 1,
+          "inverted": false,
+          "value": "garage"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "api.garage",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "60c7186ecd46a20012b5f57a",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "DaVinci PNR feed",
+      "created_at": "2021-06-14T08:50:54.665Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "60c7186ecd46a20012b5f57a",
+          "description": "",
+          "id": "60c71879cd46a20012b5f588",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.davinci-mq-feed"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.davinci-mq-feed",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "652d19a63cca23001143da31",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Partners 4 Mule app",
+      "created_at": "2023-10-16T11:08:22.163Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "652d19a63cca23001143da31",
+          "description": "",
+          "id": "652d19ba3cca23001143da61",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.partners4"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.partners4",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5a573420fc4bf60435fa31c8",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Drupal backend requests",
+      "created_at": "2018-01-11T09:53:36.920Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "type",
+          "stream_id": "5a573420fc4bf60435fa31c8",
+          "description": "",
+          "id": "5a57346dfc4bf60435fa3220",
+          "type": 1,
+          "inverted": false,
+          "value": "http_client_log"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "http.client",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5adf1f86fc4bf609f3ccbe91",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Mytmp_PNR application on ESB",
+      "created_at": "2018-04-24T12:13:58.860Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5adf1f86fc4bf609f3ccbe91",
+          "description": "",
+          "id": "5adf1f93fc4bf609f3ccbea2",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.mytmppnr"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.mytmppnr",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "626798943cca230012c83525",
+      "creator_user_id": "jmeenankada",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Galley application for Catering.",
+      "created_at": "2022-04-26T07:00:36.472Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "626798943cca230012c83525",
+          "description": "",
+          "id": "626798b63cca230012c83550",
+          "type": 1,
+          "inverted": false,
+          "value": "web.galley"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.galley",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5ac76030fc4bf609f3b2fe8d",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "ESB dcs-events",
+      "created_at": "2018-04-06T11:55:28.920Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5ac76030fc4bf609f3b2fe8d",
+          "description": "",
+          "id": "5ac76047fc4bf609f3b2fea7",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.dcsevents"
+        }
+      ],
+      "alert_conditions": [
+        {
+          "id": "ec2376da-55e7-427a-a3b4-4f5339fe6d55",
+          "type": "message_count",
+          "creator_user_id": "ckoenig",
+          "created_at": "2018-06-07T11:52:51.796+0000",
+          "parameters": {
+            "backlog": 0,
+            "repeat_notifications": false,
+            "grace": 0,
+            "threshold_type": "LESS",
+            "threshold": 0,
+            "time": 150
+          },
+          "title": "No DCS event received since 2 hours 30 minutes"
+        }
+      ],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.dcsevents",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "62e285e73cca230012f85f85",
+      "creator_user_id": "rbanton",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Addon parking API",
+      "created_at": "2022-07-28T12:49:43.449Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "62e285e73cca230012f85f85",
+          "description": "",
+          "id": "62e2ba223cca230012f8aa64",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.addon"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.addon",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5d9df68349cc23000cea171d",
+      "creator_user_id": "roschmitz",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all business messages from the productive XFT in the ESB",
+      "created_at": "2019-10-09T15:02:27.412Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5d9df68349cc23000cea171d",
+          "description": "",
+          "id": "5d9df68349cc23000cea171e",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.xft"
+        },
+        {
+          "field": "audience",
+          "stream_id": "5d9df68349cc23000cea171d",
+          "description": "",
+          "id": "5d9df68349cc23000cea171f",
+          "type": 1,
+          "inverted": false,
+          "value": "business"
+        },
+        {
+          "field": "env",
+          "stream_id": "5d9df68349cc23000cea171d",
+          "description": "Comes from one of the production mule instance",
+          "id": "5d9df68349cc23000cea1720",
+          "type": 1,
+          "inverted": false,
+          "value": "prd"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.xft.business",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "000000000000000000000003",
+      "creator_user_id": "admin",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all system events created by Graylog",
+      "created_at": "2019-11-28T08:18:34.578Z",
+      "disabled": false,
+      "rules": [],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "All system events",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "5ddf82da49cc2300126b7ee5",
+      "is_default": false
+    },
+    {
+      "id": "5b347dfbfc4bf6733ac7f5bc",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Stream containing all messages from the productive BTN interface in the ESB",
+      "created_at": "2018-06-28T06:19:39.951Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5b347dfbfc4bf6733ac7f5bc",
+          "description": "All messages from esb.btninterface application",
+          "id": "5b347e50fc4bf6733ac7f61c",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.btninterface"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.btn (deprecated)",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "6357e9af3cca23001276f1fe",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Front-end logger",
+      "created_at": "2022-10-25T13:50:39.146Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "6357e9af3cca23001276f1fe",
+          "description": "",
+          "id": "6357e9ba3cca23001276f212",
+          "type": 1,
+          "inverted": false,
+          "value": "web.log"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.log",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5b17c8c2fc4bf639350826fd",
+      "creator_user_id": "ffery",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Travel IBE logs from production ESB",
+      "created_at": "2018-06-06T11:42:58.402Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5b17c8c2fc4bf639350826fd",
+          "description": "All logs from \"travelibe\" application",
+          "id": "5b17c8c2fc4bf639350826ff",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.travelibe"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.travelibe",
+      "content_pack": null,
+      "remove_matches_from_default_stream": true,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "60b62fb6cd46a20012a136ad",
+      "creator_user_id": "nrobert",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "DaVinci API",
+      "created_at": "2021-06-01T13:01:42.578Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "60b62fb6cd46a20012a136ad",
+          "description": "",
+          "id": "60b62feacd46a20012a136e9",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.davinci"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.davinciapi",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "5dc9728549cc23000c1ab3a6",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "SFS integration",
+      "created_at": "2019-11-11T14:39:01.540Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "5dc9728549cc23000c1ab3a6",
+          "description": "",
+          "id": "5dc9729c49cc23000c1ab3c1",
+          "type": 1,
+          "inverted": false,
+          "value": "esb.sfs"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "esb.sfs",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "61c988183cca2300127c105d",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Cargo Apeiron app",
+      "created_at": "2021-12-27T09:32:08.473Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "61c988183cca2300127c105d",
+          "description": "",
+          "id": "61c988213cca2300127c106b",
+          "type": 1,
+          "inverted": false,
+          "value": "cargo.apeiron"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "cargo.apeiron",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "000000000000000000000001",
+      "creator_user_id": "local:admin",
+      "outputs": [
+        {
+          "id": "65fabf7a434b230012b4f38b",
+          "title": "grayloga-tmp",
+          "type": "org.graylog2.outputs.GelfOutput",
+          "creator_user_id": "awakamtalla",
+          "created_at": "2024-03-20T10:50:34.153Z",
+          "configuration": {
+            "hostname": "grayloga-tmp.in.tmp.lu",
+            "protocol": "UDP",
+            "connect_timeout": 1000,
+            "reconnect_delay": 500,
+            "queue_size": 512,
+            "port": 12201,
+            "max_inflight_sends": 512,
+            "tcp_no_delay": false,
+            "tcp_keep_alive": false,
+            "tls_trust_cert_chain": "",
+            "tls_verification_enabled": false
+          },
+          "content_pack": null
+        }
+      ],
+      "matching_type": "AND",
+      "description": "Stream containing all messages",
+      "created_at": "2017-03-13T09:11:31.448Z",
+      "disabled": false,
+      "rules": [],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "All messages",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": true
+    },
+    {
+      "id": "619f9258cd46a200126d19e9",
+      "creator_user_id": "ckoenig",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Webtrack",
+      "created_at": "2021-11-25T13:40:40.722Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "619f9258cd46a200126d19e9",
+          "description": "",
+          "id": "619f9264cd46a200126d19fa",
+          "type": 1,
+          "inverted": false,
+          "value": "web.webtrack"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.webtrack",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    },
+    {
+      "id": "62e7c5323cca230012ff298f",
+      "creator_user_id": "stpapusoi",
+      "outputs": [],
+      "matching_type": "AND",
+      "description": "Addon proxy log messages",
+      "created_at": "2022-08-01T12:21:06.928Z",
+      "disabled": false,
+      "rules": [
+        {
+          "field": "app_name",
+          "stream_id": "62e7c5323cca230012ff298f",
+          "description": "",
+          "id": "62e7c5823cca230012ff2a01",
+          "type": 1,
+          "inverted": false,
+          "value": "ibe.addon"
+        }
+      ],
+      "alert_conditions": [],
+      "alert_receivers": {
+        "emails": [],
+        "users": []
+      },
+      "title": "web.travelibe.addon",
+      "content_pack": null,
+      "remove_matches_from_default_stream": false,
+      "index_set_id": "58c66243fc4bf609e13a4291",
+      "is_default": false
+    }
+  ]
+}

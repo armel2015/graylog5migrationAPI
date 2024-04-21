@@ -1,0 +1,8 @@
+{
+  "description": "string",
+  "id": "string",
+  "title": "string",
+  "config": {
+    "type": "string"
+  }
+}

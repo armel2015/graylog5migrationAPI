@@ -1,0 +1,7 @@
+{
+  "node": "string",
+  "configuration": "object",
+  "global": "boolean",
+  "title": "string",
+  "type": "string"
+}

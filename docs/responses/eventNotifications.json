@@ -1,0 +1,317 @@
+{
+  "total": 20,
+  "page": 1,
+  "per_page": 50,
+  "count": 20,
+  "notifications": [
+      {
+          "id": "60b637e3cd46a20012a14084",
+          "title": "Booking API errors",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "Graylog event notification: ${event_definition_title}",
+              "body_template": "--- [Event Definition] ---------------------------\nTitle:       ${event_definition_title}\nDescription: ${event_definition_description}\nType:        ${event_definition_type}\n--- [Event] --------------------------------------\nTimestamp:            ${event.timestamp}\nMessage:              ${event.message}\nSource:               ${event.source}\nKey:                  ${event.key}\nPriority:             ${event.priority}\nAlert:                ${event.alert}\nTimestamp Processing: ${event.timestamp}\nTimerange Start:      ${event.timerange_start}\nTimerange End:        ${event.timerange_end}\nFields:\n${foreach event.fields field}  ${field.key}: ${field.value}\n${end}\n${if backlog}\n--- [Backlog] ------------------------------------\nLast messages accounting for this alert:\n${foreach backlog message}\n${message}\n${end}\n${end}\n",
+              "email_recipients": [],
+              "user_recipients": [
+                  "nrobert",
+                  "rbanton"
+              ]
+          }
+      },
+      {
+          "id": "5ddf82da49cc2300126b7eef",
+          "title": "DCS feed wasn't exported",
+          "description": "Migrated legacy alarm callback",
+          "config": {
+              "type": "legacy-alarm-callback-notification-v1",
+              "callback_type": "org.graylog2.alarmcallbacks.EmailAlarmCallback",
+              "configuration": {
+                  "sender": "graylog@tmpgroup.lu",
+                  "subject": "ALERT - DCS feed wasn't exported",
+                  "user_receivers": [],
+                  "body": "DCS feed wasn't exported\n\nPlease check https://gitlab.tmp.lu/wiki/wiki/wikis/esb/dcsfeed#user-content-regenerate-dcs-file-for-a-certain-date\n\n##########\nAlert Description: ${check_result.resultDescription}\nDate: ${check_result.triggeredAt}\nStream ID: ${stream.id}\nStream title: ${stream.title}\nStream description: ${stream.description}\nAlert Condition Title: ${alertCondition.title}\n${if stream_url}Stream URL: ${stream_url}${end}\n\nTriggered condition: ${check_result.triggeredCondition}\n##########\n\n${if backlog}Last messages accounting for this alert:\n${foreach backlog message}${message}\n\n${end}${else}<No backlog>\n${end}\n",
+                  "email_receivers": [
+                      "webdev@tmpgroup.lu"
+                  ]
+              }
+          }
+      },
+      {
+          "id": "60b639cccd46a20012a14334",
+          "title": "DaVinci API errors",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "Graylog event notification: ${event_definition_title}",
+              "body_template": "--- [Event Definition] ---------------------------\nTitle:       ${event_definition_title}\nDescription: ${event_definition_description}\nType:        ${event_definition_type}\n--- [Event] --------------------------------------\nTimestamp:            ${event.timestamp}\nMessage:              ${event.message}\nSource:               ${event.source}\nKey:                  ${event.key}\nPriority:             ${event.priority}\nAlert:                ${event.alert}\nTimestamp Processing: ${event.timestamp}\nTimerange Start:      ${event.timerange_start}\nTimerange End:        ${event.timerange_end}\nFields:\n${foreach event.fields field}  ${field.key}: ${field.value}\n${end}\n${if backlog}\n--- [Backlog] ------------------------------------\nLast messages accounting for this alert:\n${foreach backlog message}\n${message}\n${end}\n${end}\n",
+              "email_recipients": [],
+              "user_recipients": [
+                  "nrobert",
+                  "ckoenig",
+                  "rbanton"
+              ]
+          }
+      },
+      {
+          "id": "60c891d4cd46a20012b7e0c6",
+          "title": "DaVinci DTOS Import errors",
+          "description": "Erros occured while importing the XML files from DaVinci ti DTOS",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "Graylog DTOS (PRD) import event ERROR notification: ${event_definition_title}",
+              "body_template": "--- [Event Definition] ---------------------------\nTitle:       ${event_definition_title}\nDescription: ${event_definition_description}\nType:        ${event_definition_type}\n--- [Event] --------------------------------------\nTimestamp:            ${event.timestamp}\nMessage:              ${event.message}\nFields:\n${foreach event.fields field}  ${field.key}: ${field.value}\n${end}\n${if backlog}\n--- [Backlog] ------------------------------------\nLast messages accounting for this alert:\n${foreach backlog message}\n${message}\n${end}\n${end}\n",
+              "email_recipients": [
+                  "support-btos@tmp.lu"
+              ],
+              "user_recipients": []
+          }
+      },
+      {
+          "id": "64ec80893cca230011bd2422",
+          "title": "Email to Otavio May",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "[PRD] Graylog: ${event_definition_title}",
+              "body_template": "--- [Event Definition] ---------------------------\nTitle:       ${event_definition_title}\nDescription: ${event_definition_description}\nType:        ${event_definition_type}\n--- [Event] --------------------------------------\nTimestamp:            ${event.timestamp}\nMessage:              ${event.message}\nSource:               ${event.source}\nKey:                  ${event.key}\nPriority:             ${event.priority}\nAlert:                ${event.alert}\nTimestamp Processing: ${event.timestamp}\nTimerange Start:      ${event.timerange_start}\nTimerange End:        ${event.timerange_end}\nFields:\n${foreach event.fields field}  ${field.key}: ${field.value}\n${end}\n${if backlog}\n--- [Backlog] ------------------------------------\nLast messages accounting for this alert:\n${foreach backlog message}\n${message}\n${end}\n${end}\n",
+              "email_recipients": [],
+              "user_recipients": [
+                  "omay"
+              ]
+          }
+      },
+      {
+          "id": "5f7588424a40210013f755bc",
+          "title": "Error in the Blank-API",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "Graylog event notification: ${event_definition_title}",
+              "body_template": "--- [Event Definition] ---------------------------\nTitle:       ${event_definition_title}\nDescription: ${event_definition_description}\nType:        ${event_definition_type}\n--- [Event] --------------------------------------\nTimestamp:            ${event.timestamp}\nMessage:              ${event.message}\nSource:               ${event.source}\nKey:                  ${event.key}\nPriority:             ${event.priority}\nAlert:                ${event.alert}\nTimestamp Processing: ${event.timestamp}\nTimerange Start:      ${event.timerange_start}\nTimerange End:        ${event.timerange_end}\nFields:\n${foreach event.fields field}  ${field.key}: ${field.value}\n${end}\n${if backlog}\n--- [Backlog] ------------------------------------\nLast messages accounting for this alert:\n${foreach backlog message}\n${message}\n${end}\n${end}\n",
+              "email_recipients": [],
+              "user_recipients": [
+                  "nrobert"
+              ]
+          }
+      },
+      {
+          "id": "5ddf82da49cc2300126b7eed",
+          "title": "MyIDTravel notificiation",
+          "description": "Migrated legacy alarm callback",
+          "config": {
+              "type": "legacy-alarm-callback-notification-v1",
+              "callback_type": "org.graylog2.alarmcallbacks.EmailAlarmCallback",
+              "configuration": {
+                  "sender": "graylog@tmp.lg",
+                  "subject": "MyIDTravel daily employee update didn't run!",
+                  "user_receivers": [],
+                  "body": "Please check logs: https://graylog.tmp.lg/streams/5aaf893dfc4bf6043559f575/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=86400&q=\n\nAnd check application to see what is going wrong: https://gitlab.tmp.lu/esb/myidtravel\n\n##########\nAlert Description: ${check_result.resultDescription}\nDate: ${check_result.triggeredAt}\nStream ID: ${stream.id}\nStream title: ${stream.title}\nStream description: ${stream.description}\nAlert Condition Title: ${alertCondition.title}\n${if stream_url}Stream URL: ${stream_url}${end}\n\nTriggered condition: ${check_result.triggeredCondition}\n##########\n\n${if backlog}Last messages accounting for this alert:\n${foreach backlog message}${message}\n\n${end}${else}<No backlog>\n${end}\n",
+                  "email_receivers": [
+                      "webdev@tmpgroup.lu"
+                  ]
+              }
+          }
+      },
+      {
+          "id": "5f0c5b734a402100137ab41a",
+          "title": "No Apra file start message were received in the last 60 minutes",
+          "description": "We trigger a notification if we don't receive DWH files from Amadeus in the last hour",
+          "config": {
+              "type": "legacy-alarm-callback-notification-v1",
+              "callback_type": "org.graylog2.alarmcallbacks.EmailAlarmCallback",
+              "configuration": {
+                  "sender": "graylog@tmpgroup.lu",
+                  "subject": "WARNING: No Apra file start message received last 60 minutes",
+                  "body": "No Apra file start message were received in the last 60 minutes.\nPlease ensure that Amadeus has sent files to us on tmp FTP before debugging.",
+                  "user_receivers": [
+                      "ckoenig"
+                  ],
+                  "email_receivers": []
+              }
+          }
+      },
+      {
+          "id": "5ddf82da49cc2300126b7ef1",
+          "title": "No DCS event received since 2 hours 30 minutes",
+          "description": "Migrated legacy alarm callback",
+          "config": {
+              "type": "legacy-alarm-callback-notification-v1",
+              "callback_type": "org.graylog2.alarmcallbacks.EmailAlarmCallback",
+              "configuration": {
+                  "sender": "graylog@tmpgroup.lu",
+                  "subject": "Graylog alert for stream: ${stream.title}: ${check_result.resultDescription}",
+                  "user_receivers": [
+                      "ckoenig"
+                  ],
+                  "body": "No DCS events received.\nPlease check https://graylog.tmp.lg/streams/5ac76030fc4bf609f3b2fe8d/search and restart the application dcs-events if necessary.\n\n##########\nAlert Description: ${check_result.resultDescription}\nDate: ${check_result.triggeredAt}\nStream ID: ${stream.id}\nStream title: ${stream.title}\nStream description: ${stream.description}\nAlert Condition Title: ${alertCondition.title}\n${if stream_url}Stream URL: ${stream_url}${end}\n\nTriggered condition: ${check_result.triggeredCondition}\n##########\n\n${if backlog}Last messages accounting for this alert:\n${foreach backlog message}${message}\n\n${end}${else}<No backlog>\n${end}\n",
+                  "email_receivers": []
+              }
+          }
+      },
+      {
+          "id": "5ddf82db49cc2300126b7ef7",
+          "title": "No Eurocontrol message since 2h - email notification",
+          "description": "Migrated legacy alarm callback",
+          "config": {
+              "type": "legacy-alarm-callback-notification-v1",
+              "callback_type": "org.graylog2.alarmcallbacks.EmailAlarmCallback",
+              "configuration": {
+                  "sender": "graylog@tmpgroup.lu",
+                  "subject": "Graylog alert for stream: ${stream.title}: ${check_result.resultDescription}",
+                  "user_receivers": [
+                      "ckoenig",
+                      "iraduicabota"
+                  ],
+                  "body": "No Eurocontrol message received since 2h. Please check Graylog stream https://graylog.tmp.lg/streams/5c9897d4fc4bf64bfa7627a1/search\n\n##########\nAlert Description: ${check_result.resultDescription}\nDate: ${check_result.triggeredAt}\nStream ID: ${stream.id}\nStream title: ${stream.title}\nStream description: ${stream.description}\nAlert Condition Title: ${alertCondition.title}\n${if stream_url}Stream URL: ${stream_url}${end}\n\nTriggered condition: ${check_result.triggeredCondition}\n##########\n\n${if backlog}Last messages accounting for this alert:\n${foreach backlog message}${message}\n\n${end}${else}<No backlog>\n${end}\n",
+                  "email_receivers": []
+              }
+          }
+      },
+      {
+          "id": "5ddf82db49cc2300126b7ef9",
+          "title": "No PNR feed message received in 15 minutes",
+          "description": "Migrated legacy alarm callback",
+          "config": {
+              "type": "legacy-alarm-callback-notification-v1",
+              "callback_type": "org.graylog2.alarmcallbacks.EmailAlarmCallback",
+              "configuration": {
+                  "sender": "graylog@tmpgroup.lu",
+                  "subject": "WARNING: No PNR feed message received within the last 15 minutes",
+                  "user_receivers": [
+                      "ckoenig",
+                      "adorfler"
+                  ],
+                  "body": "No PNR feed message were received in the last 15 minutes. Please ensure that the PNR feed Message Queue connection is still up.",
+                  "email_receivers": []
+              }
+          }
+      },
+      {
+          "id": "5f325ea24a40210013a7c234",
+          "title": "Send blank passive check to nagios",
+          "description": "",
+          "config": {
+              "type": "http-notification-v1",
+              "url": "https://lxnagios.in.tmp.lu/cgi-bin/passive_check_result?host=wbsblankp&service=corrupt_datafile&status=2&output=see%20aixlog.txt%20on%20blank"
+          }
+      },
+      {
+          "id": "5f32cffb4a40210013a84936",
+          "title": "Send php memory dmz2-prd-drupal1 to nagios",
+          "description": "",
+          "config": {
+              "type": "http-notification-v1",
+              "url": "https://lxnagios.in.tmp.lu/cgi-bin/passive_check_result?host=dmz2-prd-drupal1&service=check_php_memory&status=2&output=see%20error_log"
+          }
+      },
+      {
+          "id": "5f32d07b4a40210013a84a06",
+          "title": "Send php memory dmz2-prd-drupal2 to nagios",
+          "description": "",
+          "config": {
+              "type": "http-notification-v1",
+              "url": "https://lxnagios.in.tmp.lu/cgi-bin/passive_check_result?host=dmz2-prd-drupal2&service=check_php_memory&status=2&output=see%20error_log"
+          }
+      },
+      {
+          "id": "5f7712474a40210013f92735",
+          "title": "[IAM] Issues",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "${event_definition_title}",
+              "body_template": "--- [Event Definition] ---------------------------\nTitle:       ${event_definition_title}\nDescription: ${event_definition_description}\nType:        ${event_definition_type}\n--- [Event] --------------------------------------\nTimestamp:            ${event.timestamp}\nMessage:              ${event.message}\nSource:               ${event.source}\nKey:                  ${event.key}\nPriority:             ${event.priority}\nAlert:                ${event.alert}\nTimestamp Processing: ${event.timestamp}\nTimerange Start:      ${event.timerange_start}\nTimerange End:        ${event.timerange_end}\nFields:\n${foreach event.fields field}  ${field.key}: ${field.value}\n${end}\n${if backlog}\n--- [Backlog] ------------------------------------\nLast messages accounting for this alert:\n${foreach backlog message}\n${message}\n${end}\n${end}\n",
+              "email_recipients": [
+                  "identity.management@tmpgroup.lu"
+              ],
+              "user_recipients": []
+          }
+      },
+      {
+          "id": "654a5e603cca2300117b3170",
+          "title": "email awakam",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "${event_definition_title} - Graylog alert",
+              "body_template": "${event_definition_title}\r\n\r\n${event_definition_description}\r\n\r\n--- [Event] --------------------------------------\r\n- Timestamp: ${event.timestamp}\r\n- Message: ${event.message}\r\n- Source: ${event.source}\r\n- Priority: ${event.priority}\r\n- Alert: ${event.alert}\r\n- Timestamp Processing: ${event.timestamp}\r\n- Timerange Start: ${event.timerange_start}\r\n- Timerange End: ${event.timerange_end}\r\n\r\n${if event.fields}--- [Fields] ------------------------------------\r\n${foreach event.fields field}- ${field.key}: ${field.value}\r\n${end}\r\n${end}\r\n\r\n${if backlog}--- [Backlog] ------------------------------------\r\nLast messages accounting for this alert:\r\n\r\n${foreach backlog message}- ${message}\r\n${end}\r\n${end}\r\n\r\n--- [Useful monitoring links] --------------------------------------\r\nhttps://gitlab.tmp.lu/wiki/wiki/-/wikis/Monitoring",
+              "email_recipients": [],
+              "user_recipients": [
+                  "awakamtalla"
+              ]
+          }
+      },
+      {
+          "id": "5f576a504a40210013d3b0e8",
+          "title": "email ckoenig",
+          "description": "Email to Clément Koenig.",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "${event_definition_title} – Graylog alert",
+              "body_template": "${event_definition_title}\r\n\r\n${event_definition_description}\r\n\r\n--- [Event] --------------------------------------\r\n- Timestamp: ${event.timestamp}\r\n- Message: ${event.message}\r\n- Source: ${event.source}\r\n- Priority: ${event.priority}\r\n- Alert: ${event.alert}\r\n- Timestamp Processing: ${event.timestamp}\r\n- Timerange Start: ${event.timerange_start}\r\n- Timerange End: ${event.timerange_end}\r\n\r\n${if event.fields}--- [Fields] ------------------------------------\r\n${foreach event.fields field}- ${field.key}: ${field.value}\r\n${end}\r\n${end}\r\n\r\n${if backlog}--- [Backlog] ------------------------------------\r\nLast messages accounting for this alert:\r\n\r\n${foreach backlog message}- ${message}\r\n${end}\r\n${end}",
+              "email_recipients": [],
+              "user_recipients": [
+                  "ckoenig"
+              ]
+          }
+      },
+      {
+          "id": "60bb1705cd46a20012a71432",
+          "title": "email ckoenig agomri rbanton",
+          "description": "",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "${event_definition_title} – Graylog alert",
+              "body_template": "${event_definition_title}\r\n\r\n${event_definition_description}\r\n\r\n--- [Event] --------------------------------------\r\n- Timestamp: ${event.timestamp}\r\n- Message: ${event.message}\r\n- Source: ${event.source}\r\n- Priority: ${event.priority}\r\n- Alert: ${event.alert}\r\n- Timestamp Processing: ${event.timestamp}\r\n- Timerange Start: ${event.timerange_start}\r\n- Timerange End: ${event.timerange_end}\r\n\r\n${if event.fields}--- [Fields] ------------------------------------\r\n${foreach event.fields field}- ${field.key}: ${field.value}\r\n${end}\r\n${end}\r\n\r\n${if backlog}--- [Backlog] ------------------------------------\r\nLast messages accounting for this alert:\r\n\r\n${foreach backlog message}- ${message}\r\n${end}\r\n${end}",
+              "email_recipients": [],
+              "user_recipients": [
+                  "ckoenig",
+                  "rbanton",
+                  "agomri"
+              ]
+          }
+      },
+      {
+          "id": "5f5f3e1c4a40210013dcee12",
+          "title": "email nrobert",
+          "description": "email to nrobert",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "Graylog event notification: ${event_definition_title}",
+              "body_template": "${event_definition_title}\r\n\r\n${event_definition_description}\r\n\r\n--- [Event] --------------------------------------\r\n- Timestamp: ${event.timestamp}\r\n- Message: ${event.message}\r\n- Source: ${event.source}\r\n- Priority: ${event.priority}\r\n- Alert: ${event.alert}\r\n- Timestamp Processing: ${event.timestamp}\r\n- Timerange Start: ${event.timerange_start}\r\n- Timerange End: ${event.timerange_end}\r\n\r\n${if event.fields}--- [Fields] ------------------------------------\r\n${foreach event.fields field}- ${field.key}: ${field.value}\r\n${end}\r\n${end}\r\n\r\n${if backlog}--- [Backlog] ------------------------------------\r\nLast messages accounting for this alert:\r\n\r\n${foreach backlog message}- ${message}\r\n${end}\r\n${end}",
+              "email_recipients": [],
+              "user_recipients": [
+                  "nrobert"
+              ]
+          }
+      },
+      {
+          "id": "60992619cd46a200127ebbcf",
+          "title": "email web integration team",
+          "description": "Sends an email to the Web Integration team (Clément, Nicolas, Rémy, Rrahel).",
+          "config": {
+              "type": "email-notification-v1",
+              "sender": "graylog@tmpgroup.lu",
+              "subject": "${event_definition_title} – Graylog alert",
+              "body_template": "${event_definition_title}\r\n\r\n${event_definition_description}\r\n\r\n--- [Event] --------------------------------------\r\n- Timestamp: ${event.timestamp}\r\n- Message: ${event.message}\r\n- Source: ${event.source}\r\n- Priority: ${event.priority}\r\n- Alert: ${event.alert}\r\n- Timestamp Processing: ${event.timestamp}\r\n- Timerange Start: ${event.timerange_start}\r\n- Timerange End: ${event.timerange_end}\r\n\r\n${if event.fields}--- [Fields] ------------------------------------\r\n${foreach event.fields field}- ${field.key}: ${field.value}\r\n${end}\r\n${end}\r\n\r\n${if backlog}--- [Backlog] ------------------------------------\r\nLast messages accounting for this alert:\r\n\r\n${foreach backlog message}- ${message}\r\n${end}\r\n${end}\r\n\r\n--- [Useful monitoring links] --------------------------------------\r\nhttps://gitlab.tmp.lu/wiki/wiki/-/wikis/Monitoring",
+              "email_recipients": [
+                  "webdev@tmpgroup.lu"
+              ],
+              "user_recipients": []
+          }
+      }
+  ],
+  "query": "",
+  "grand_total": 20
+}

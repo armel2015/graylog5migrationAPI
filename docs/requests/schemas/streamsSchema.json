@@ -1,0 +1,17 @@
+{
+  "index_set_id": "string",
+  "matching_type": "string",
+  "remove_matches_from_default_stream": "boolean",
+  "description": "string",
+  "rules": [
+    {
+      "field": "string",
+      "description": "string",
+      "type": "integer",
+      "inverted": "boolean",
+      "value": "string"
+    }
+  ],
+  "title": "string",
+  "content_pack": "string"
+}

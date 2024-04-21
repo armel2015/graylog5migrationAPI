@@ -1,0 +1,40 @@
+{
+  "name": "graylog",
+  "version": "1.0.0",
+  "description": " Graylog API.",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/main.js",
+    "lint": "eslint src/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab..lu:continuousintegration/graylog.git"
+  },
+  "keywords": [],
+  "author": " Integration team",
+  "license": "ISC",
+  "volta": {
+    "node": "20.10.0"
+  },
+  "dependencies": {
+    "@fastify/request-context": "^5.0.0",
+    "@fastify/swagger": "^8.13.0",
+    "fastify": "^4.25.2",
+    "fastify-plugin": "^4.5.1",
+    "@fastify/swagger-ui": "^2.0.1",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5",
+    "winston": "^3.11.0",
+    "winston-graylog2": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}

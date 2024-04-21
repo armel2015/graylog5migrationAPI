@@ -1,0 +1,48 @@
+{
+  "field_spec": "object",
+  "key_spec": [
+    "string"
+  ],
+  "notification_settings": {
+    "backlog_size": "integer",
+    "grace_period_ms": "integer"
+  },
+  "description": "string",
+  "_scope": "string",
+  "storage": [
+    {
+      "notification_parameters": {
+        "type": "string"
+      },
+      "notification_id": "string"
+    }
+  ],
+  "priority": "integer",
+  "title": "string",
+  "scheduler": {
+    "data": {
+      "type": "string"
+    },
+    "next_time": "string",
+    "triggered_at": "string",
+    "queued_notifications": "integer",
+    "is_scheduled": "boolean",
+    "status": "string"
+  },
+  "updated_at": "string",
+  "matched_at": "string",
+  "alert": "boolean",
+  "state": "string",
+  "id": "string",
+  "config": {
+    "type": "string"
+  },
+  "notifications": [
+    {
+      "notification_parameters": {
+        "type": "string"
+      },
+      "notification_id": "string"
+    }
+  ]
+}

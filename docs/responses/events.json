@@ -1,0 +1,2064 @@
+{
+  "total": 33,
+  "page": 1,
+  "per_page": 50,
+  "count": 33,
+  "event_definitions": [
+    {
+      "id": "6163d717cd46a2001221532a",
+      "title": "Amadeus : esb.amadeus-mq-pnr-feed : exception occurred",
+      "description": "An exception occurred in esb.amadeus-mq-pnr-feed, please check if:\n- there's an issue when executing the PNR DB procedure pnr_newmessage\n- there's an issue with Amadeus SBRRES feed\n\nPlease check logs here:\nhttps://graylog.in.tmp.lu/streams/5cdd22bafc4bf60b0783dbb9/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=86400&q=level%3A(%3C%3D3)\n\nMore info in the code repository of amadeus-mq-pnr-feed:\nhttps://gitlab.tmp.lu/mule4/amadeus-mq-pnr-feed#amadeus-pnr-feed",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "level:(<=3)",
+        "streams": [
+          "5cdd22bafc4bf60b0783dbb9"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 60000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 7200000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5ddf82da49cc2300126b7ee9",
+      "title": "Anormal high amount of requests on Mytmp API",
+      "description": "Stream URL: https://graylog.in.tmp.lu/streams/5cb05cadfc4bf64bfa8ff430/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=1800&q=mule_app_name%3Amytmp%20%26%26%20%22%5C%2Fauthenticate%20HTTP%22",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "mule_app_name:mytmp && \"\\/authenticate HTTP\"",
+        "streams": [
+          "5cb05cadfc4bf64bfa8ff430"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "ea0c86b2-cecc-4d8f-9752-78b2c95668b5",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": ">",
+            "left": {
+              "expr": "number-ref",
+              "ref": "ea0c86b2-cecc-4d8f-9752-78b2c95668b5"
+            },
+            "right": {
+              "expr": "number",
+              "value": 100
+            }
+          }
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "count": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 3600000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f576a504a40210013d3b0e8",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60cc9945cd46a20012bd1c35",
+      "title": "BTN : (Bewotec) Timeout",
+      "description": "possible timeout of the Bewotec services",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "full_message:\"timeout\"",
+        "streams": [
+          "5b347dfbfc4bf6733ac7f5bc"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f5f3e1c4a40210013dcee12",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5fd08cb44a402100121785ad",
+      "title": "Blank / BTOS unavailabilities in the Blank-API",
+      "description": "Cover the following cases:\n- The Blank-API cannot connect to Blank, this could be a DNS issue (eg. full_message:\"Failed to route event via endpoint:\");\n- Blank respond to the Blank-API TEXT=977, which means that Blank is not available to respond;\n- The Blank-API reterieve an exception containing \"Cannot get connection for URL\", which could bean that it cannot connect to a database, eg. BTOS.",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "full_message:\"Failed to route event via endpoint:\" OR full_message:\"TEXT=977\" OR full_message:\"Cannot get connection for URL\"",
+        "streams": [
+          "5b17c8a0fc4bf639350826d1"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 1800000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f5f3e1c4a40210013dcee12",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f325fa54a40210013a7c36c",
+      "title": "Blank corrupt file",
+      "description": "Detect corrupt file in aixlog.txt",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "source:wbsblankp* AND message:\"Fehler Datei\"",
+        "streams": [
+          "000000000000000000000001"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 900000,
+        "execute_every_ms": 300000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 0,
+        "backlog_size": 2
+      },
+      "notifications": [
+        {
+          "notification_id": "5f325ea24a40210013a7c234",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60b6381bcd46a20012a140c6",
+      "title": "Booking-API : BL : BK Error",
+      "description": "A BK- error occurred in the Booking API for a BL product",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error AND x_travel_type:BL AND full_message:\"errorDescription: BK\"",
+        "streams": [
+          "60b62f78cd46a20012a1365f"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b637e3cd46a20012a14084",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60c898a5cd46a20012b7eb26",
+      "title": "Booking-API : BL : non BK Error",
+      "description": "A non BK- error occurred in the Booking API for a BL product",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error AND x_travel_type:BL AND full_message:\"errorDescription:\" AND NOT full_message:\"errorDescription: BK\"",
+        "streams": [],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 60000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 5000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b637e3cd46a20012a14084",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60c86ddccd46a20012b7a968",
+      "title": "Booking-API : DP : Error",
+      "description": "An error occurred in the Booking API for a DP product",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error AND x_travel_type:DP",
+        "streams": [
+          "60b62f78cd46a20012a1365f"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b637e3cd46a20012a14084",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60b638a0cd46a20012a14183",
+      "title": "Booking-API : Error : Ingenico took more than 50 seconds",
+      "description": "Ingenico took more than 50 seconds to respond to the Booking-API",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "class_name:lu.tmpgroup.booking.api.ingenico.payref.request AND duration_ms:>50000",
+        "streams": [
+          "60b62f78cd46a20012a1365f"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b637e3cd46a20012a14084",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60b63901cd46a20012a14210",
+      "title": "Booking-API : Warning",
+      "description": "A warning occurred in the Booking API",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Warning",
+        "streams": [
+          "60b62f78cd46a20012a1365f"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b637e3cd46a20012a14084",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60c892f0cd46a20012b7e294",
+      "title": "DaVinci DTOS Import errors",
+      "description": "",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error",
+        "streams": [
+          "60c7186ecd46a20012b5f57a"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 900000,
+        "execute_every_ms": 900000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "source": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.source}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 900000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60c891d4cd46a20012b7e0c6",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60b639fdcd46a20012a1436a",
+      "title": "DaVinci-API tmp : DP : Error",
+      "description": "An error occurred in the (tmp) DaVinci-API",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error",
+        "streams": [
+          "60b62fb6cd46a20012a136ad"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b639cccd46a20012a14334",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60b63a4bcd46a20012a143eb",
+      "title": "DaVinci-API tmp : DP : Warning",
+      "description": "A warning occurred in the DaVinci-API tmp",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Warning",
+        "streams": [
+          "60b62fb6cd46a20012a136ad"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "correlationId": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.correlationId}",
+              "require_values": false
+            }
+          ]
+        },
+        "full_message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.full_message}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_id": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_id}",
+              "require_values": false
+            }
+          ]
+        },
+        "request_path": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.request_path}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_distribution_channel": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_distribution_channel}",
+              "require_values": false
+            }
+          ]
+        },
+        "x_travel_type": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.x_travel_type}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60b639cccd46a20012a14334",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "61406f48cd46a20012f3991e",
+      "title": "ESB node down / deployment in progress ?",
+      "description": "HTTP 503 error (service not available) is returned by at least one ESB node.\n\nPlease verify : https://graylog.in.tmp.lu/streams/5cb05cadfc4bf64bfa8ff430/search?rangetype=relative&fields=source%2Chttp_status%2Cmessage%2Cmule_app_name&width=1680&highlightMessage=&relative=900&q=http_status%3A503",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "http_status:503",
+        "streams": [
+          "5cb05cadfc4bf64bfa8ff430"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f5f3e1c4a40210013dcee12",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f7588584a40210013f755d5",
+      "title": "Error in the Blank-API",
+      "description": "An error occurred in the Blank-API",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error",
+        "streams": [
+          "5b17c8a0fc4bf639350826d1",
+          "5b17c6cafc4bf639350824c0"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 1800000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f7588424a40210013f755bc",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f5f3f044a40210013dcef39",
+      "title": "Error in the Content-hub",
+      "description": "An error occurred in the Content-hub.",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "log_level:Error",
+        "streams": [
+          "5da5a75f49cc23000cf2a5c3"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 1800000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f5f3e1c4a40210013dcee12",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6523b42e3cca2300112fd408",
+      "title": "Eurocontrol MQ",
+      "description": "Errors were logged by Eurocontrol app. Please check logs and ensure we are still connected to their MQ broker: \nhttps://graylog.in.tmp.lu/streams/5c9897d4fc4bf64bfa7627a1/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=86400&q=level%3A(%3C%3D3)\n\nMore info: https://gitlab.tmp.lu/mule4/eurocontrol",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "level:(<=3)",
+        "streams": [
+          "5c9897d4fc4bf64bfa7627a1"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 60000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 3600000,
+        "backlog_size": 5
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6093b84dcd46a2001278514b",
+      "title": "GS RealTime - Errors",
+      "description": "At least one error occurred in the gsrealtime application.\nStream URL: https://graylog.in.tmp.lu/streams/5d021291fc4bf62614877f80/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=86400&q=level%3A(%3C%3D3)%20%26%26%20!%22flowVars.initialRequest.employeeId%20%3C%2065000%22",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "level:(<=3) && !\"flowVars.initialRequest.employeeId < 65000\"",
+        "streams": [
+          "5d021291fc4bf62614877f80"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 28800000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f576a504a40210013d3b0e8",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60ba564fcd46a20012a6264d",
+      "title": "Mule Load Balancer - Too many errors HTTP 500",
+      "description": "Stream URL: https://graylog.in.tmp.lu/streams/5cb05cadfc4bf64bfa8ff430/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=3600&q=http_status%3A(%3E%3D500)",
+      "priority": 3,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "http_status:(>=500)",
+        "streams": [
+          "5cb05cadfc4bf64bfa8ff430"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "5803ad50-7758-4785-9525-5442399e54db",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": ">=",
+            "left": {
+              "expr": "number-ref",
+              "ref": "5803ad50-7758-4785-9525-5442399e54db"
+            },
+            "right": {
+              "expr": "number",
+              "value": 30
+            }
+          }
+        },
+        "search_within_ms": 60000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 900000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f0c5e5d4a402100137ab7a6",
+      "title": "No Apra file start message were received in the last 60 minutes",
+      "description": "Check the following stream: https://graylog.in.tmp.lu/streams/5efa59f2504d230014f5bd6f/search?interval=hour&width=1920&relative=172800&page=1&sortOrder=desc&q=%22Get%20Amadeus%20file%22%20%26%26%20class_name%3Alu.tmpgroup.transaction.feed&rangetype=relative&fields=message%2Csource&sortField=timestamp",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "\"Get Amadeus file\" && class_name:lu.tmpgroup.transaction.feed",
+        "streams": [
+          "5efa59f2504d230014f5bd6f"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "a75e09fe-acee-4706-bb83-93ab1cb23500",
+            "function": "count",
+            "field": "timestamp"
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": "==",
+            "left": {
+              "expr": "number-ref",
+              "ref": "a75e09fe-acee-4706-bb83-93ab1cb23500"
+            },
+            "right": {
+              "expr": "number",
+              "value": 0
+            }
+          }
+        },
+        "search_within_ms": 4200000,
+        "execute_every_ms": 3600000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 21600000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f576a504a40210013d3b0e8",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5ddf82da49cc2300126b7ef3",
+      "title": "No DCS event received since 3 hours",
+      "description": "Migrated message count alert condition\n\nIf the error occurred between 23:00 and 04:00, please ignore it / don't create an incident in this case.\n\nOtherwise, read the troubleshooting article: https://gitlab.tmp.lu/wiki/wiki/-/wikis/Troubleshooting/dcs-events\n\nSee latest logs here: https://graylog.in.tmp.lu/streams/5ac76030fc4bf609f3b2fe8d/search?rangetype=relative&fields=&width=1920&highlightMessage=&relative=172800&q=",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "",
+        "streams": [
+          "5ac76030fc4bf609f3b2fe8d"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "2f28e49b-04bd-4d25-8889-b7469b8a2d9e",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": "==",
+            "left": {
+              "expr": "number-ref",
+              "ref": "2f28e49b-04bd-4d25-8889-b7469b8a2d9e"
+            },
+            "right": {
+              "expr": "number",
+              "value": 0
+            }
+          }
+        },
+        "search_within_ms": 10800000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 10800000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6390376d3cca230012bdfcab",
+      "title": "The DCS feed processing failed or didn't run",
+      "description": "The DCS feed processing must occur 1 time per day around 04:00. Amadeus sends to file to ftp.tmp.lu in SFTP in the /PRD/incoming folder. Then, the Mule application dcs-dw-feeds is monitoring this folder and must start the processing automatically.\n\nWhen the processing is done, a message \"Processing done\" is logged into Graylog.\n\nNo \"Processing done\" message was logged since 30 hours, that's why you receive this alert. Please check the logs with the link below and investigate:\nhttps://graylog.in.tmp.lu/streams/5ac75f56fc4bf609f3b2fd9b/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=86400&q=\n\nThis article should help you to troubleshoot: https://gitlab.tmp.lu/wiki/wiki/-/wikis/Troubleshooting/dcs-dw-feed",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "\"Processing done\"",
+        "streams": [
+          "5ac75f56fc4bf609f3b2fd9b"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "f2a7f764-2ecc-4200-9169-62f212e8d826",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": "==",
+            "left": {
+              "expr": "number-ref",
+              "ref": "f2a7f764-2ecc-4200-9169-62f212e8d826"
+            },
+            "right": {
+              "expr": "number",
+              "value": 0
+            }
+          }
+        },
+        "search_within_ms": 108000000,
+        "execute_every_ms": 3600000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 86400000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        },
+        {
+          "notification_id": "64ec80893cca230011bd2422",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60cc9c4ccd46a20012bd207c",
+      "title": "XFTv2 : (Bewotec) Timeout",
+      "description": "possible timeout of the Bewotec services",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "full_message:\"timeout exceeded\"",
+        "streams": [
+          "5d9df64b49cc23000cea16dc"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 5000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f5f3e1c4a40210013dcee12",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f9a63ca4a40210012d76c19",
+      "title": "[IAM] Midpoint - Connection failed",
+      "description": "A connection to a subsystem failed (SAP HR, SAP Interim, LDAP, AD, ...)\nActions: \n- Access https://midpointp.in.tmp.lu/midpoint/admin/tasks\n- if tasks are in FATAL status, look at the reasons (by clicking on the task), then end with 'Resume' task\n- otherwise, false alarm",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "source:midpointp AND message:org.identityconnectors.framework.common.exceptions.ConnectorException AND levelName:ERROR",
+        "streams": [],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 60000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 600000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f7712474a40210013f92735",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f76e1c64a40210013f8edc0",
+      "title": "[IAM] Midpoint - Potential issues",
+      "description": "Detects if Midpoint encounters an unusual number of errors.\nActions: \n- Access https://midpointp.in.tmp.lu/midpoint/admin/tasks\n- if tasks are in FATAL status, look at the reasons (by clicking on the task), then end with 'Resume' task\n- otherwise, false alarm",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "source:midpointp AND log_level:Error",
+        "streams": [],
+        "group_by": [],
+        "series": [
+          {
+            "id": "fd7febbd-ce15-4620-9a41-a47d489c3d46",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": ">",
+            "left": {
+              "expr": "number-ref",
+              "ref": "fd7febbd-ce15-4620-9a41-a47d489c3d46"
+            },
+            "right": {
+              "expr": "number",
+              "value": 600
+            }
+          }
+        },
+        "search_within_ms": 3600000,
+        "execute_every_ms": 1800000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 0,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f7712474a40210013f92735",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "632432b83cca23001234f58f",
+      "title": "dcs-events - Disconnected from the MQ",
+      "description": "",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "\"A problem with this connection has occurred\"",
+        "streams": [
+          "5ac76030fc4bf609f3b2fe8d"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 60000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 0,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6059fd104a40210012ba39f6",
+      "title": "flightops.FDM_SFTP_Service",
+      "description": "Too many warnings within a given period of time",
+      "priority": 3,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "source: Scheduler AND app_name:flightops.FDM_SFTP_Service AND (log_level:Warning OR log_level:Error)",
+        "streams": [
+          "5fd33d194a402100121ab4ca"
+        ],
+        "group_by": [
+          "log_level",
+          "LoggerName",
+          "ops_fdm_service"
+        ],
+        "series": [
+          {
+            "id": "9b6fedf6-d8a0-4fea-bcea-9a36198369fa",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": ">=",
+            "left": {
+              "expr": "number-ref",
+              "ref": "9b6fedf6-d8a0-4fea-bcea-9a36198369fa"
+            },
+            "right": {
+              "expr": "number",
+              "value": 20
+            }
+          }
+        },
+        "search_within_ms": 3600000,
+        "execute_every_ms": 3600000
+      },
+      "field_spec": {
+        "ops_fdm_service": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.ops_fdm_service}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 7200000,
+        "backlog_size": 20
+      },
+      "notifications": [],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "609e3e8acd46a2001284c241",
+      "title": "flightops.Flex_MTOM_Manager",
+      "description": "Errors on Flex MTOM robot",
+      "priority": 3,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "app_name: flightops.Flex_MTOM_Manager AND source:EFBP01 AND log_level:Error",
+        "streams": [],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 1500000,
+        "execute_every_ms": 600000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 0,
+        "backlog_size": 0
+      },
+      "notifications": [],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "64366cebb9c3a20012f92c3f",
+      "title": "myIDTravel export didn't run",
+      "description": "Check this stream for more details: https://graylog.in.tmp.lu/streams/5aaf893dfc4bf6043559f575/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=172800&q=!%22health%22%20%26%26%20!%22mule_version%22",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "\"Employee data upload finished.\"",
+        "streams": [
+          "5aaf893dfc4bf6043559f575"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "247faf2d-4f20-49ee-872e-cdd62368347a",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": "==",
+            "left": {
+              "expr": "number-ref",
+              "ref": "247faf2d-4f20-49ee-872e-cdd62368347a"
+            },
+            "right": {
+              "expr": "number",
+              "value": 0
+            }
+          }
+        },
+        "search_within_ms": 93600000,
+        "execute_every_ms": 86400000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 3600000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f32cfe64a40210013a84910",
+      "title": "php memory problem on drupal1 production",
+      "description": "",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "source:dmz2\\-prd\\-drupal1.svr.tmp AND message:memory AND type:http_error_log",
+        "streams": [
+          "5a573401fc4bf60435fa31a1"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 900000,
+        "execute_every_ms": 300000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 0,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f32cffb4a40210013a84936",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f32d0654a40210013a849df",
+      "title": "php memory problem on drupal2 production",
+      "description": "",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "source:dmz2\\-prd\\-drupal2.svr.tmp AND message:memory AND type:http_error_log",
+        "streams": [
+          "5a573401fc4bf60435fa31a1"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 900000,
+        "execute_every_ms": 300000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 0,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "5f32d07b4a40210013a84a06",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6391a8663cca230012bfdd92",
+      "title": "voucher api - TDR file from Qwikcilver not treated as expected",
+      "description": "We normally receive a TDR file every 1 hour on ftp.tmp.lu with user qwikcilver into /TDR directory.\nThis alert is raised when a file treatment wasn't done as expected.\nPlease check this stream: https://graylog.in.tmp.lu/streams/5fc524364a402100120a0500/search",
+      "priority": 2,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "message:(\"The TDR file\" AND \"successfully\")",
+        "streams": [
+          "5fc524364a402100120a0500"
+        ],
+        "group_by": [],
+        "series": [
+          {
+            "id": "4d868d87-4ac5-44f9-beaa-2a1de09d1c77",
+            "function": "count",
+            "field": null
+          }
+        ],
+        "conditions": {
+          "expression": {
+            "expr": "==",
+            "left": {
+              "expr": "number-ref",
+              "ref": "4d868d87-4ac5-44f9-beaa-2a1de09d1c77"
+            },
+            "right": {
+              "expr": "number",
+              "value": 0
+            }
+          }
+        },
+        "search_within_ms": 4800000,
+        "execute_every_ms": 3600000
+      },
+      "field_spec": {},
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 21600000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5f576a084a40210013d3b088",
+      "title": "web.edocuments error",
+      "description": "At least one error occurred in the edocuments application.\n\nCheck this: https://graylog.in.tmp.lu/streams/5ee21b14504d230014d8335e/search?rangetype=relative&fields=message%2Csource&width=1920&highlightMessage=&relative=86400&q=level%3A(%3C%3D3)\n\nThis article could help you to solve the issue: https://gitlab.tmp.lu/wiki/wiki/-/wikis/Troubleshooting/edocuments-parking",
+      "priority": 3,
+      "alert": true,
+      "config": {
+        "type": "aggregation-v1",
+        "query": "level:(<=3)",
+        "streams": [
+          "5ee21b14504d230014d8335e"
+        ],
+        "group_by": [],
+        "series": [],
+        "conditions": {
+          "expression": null
+        },
+        "search_within_ms": 300000,
+        "execute_every_ms": 60000
+      },
+      "field_spec": {
+        "url": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.url}",
+              "require_values": false
+            }
+          ]
+        },
+        "pnr": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.pnr}",
+              "require_values": false
+            }
+          ]
+        },
+        "message": {
+          "data_type": "string",
+          "providers": [
+            {
+              "type": "template-v1",
+              "template": "${source.message}",
+              "require_values": false
+            }
+          ]
+        }
+      },
+      "key_spec": [],
+      "notification_settings": {
+        "grace_period_ms": 300000,
+        "backlog_size": 0
+      },
+      "notifications": [
+        {
+          "notification_id": "60992619cd46a200127ebbcf",
+          "notification_parameters": null
+        }
+      ],
+      "storage": [
+        {
+          "type": "persist-to-streams-v1",
+          "streams": [
+            "000000000000000000000002"
+          ]
+        }
+      ]
+    }
+  ],
+  "query": "",
+  "grand_total": 33
+}

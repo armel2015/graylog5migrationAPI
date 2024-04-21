@@ -1,0 +1,16 @@
+{
+  "owner": "string",
+  "summary": "string",
+  "description": "string",
+  "created_at": "string",
+  "state": "object",
+  "id": "string",
+  "type": "string",
+  "title": "string",
+  "favorite": "boolean",
+  "properties": [
+    "string"
+  ],
+  "requires": "object",
+  "search_id": "string"
+}

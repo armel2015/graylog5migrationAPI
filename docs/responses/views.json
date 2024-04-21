@@ -1,0 +1,637 @@
+{
+  "total": 4,
+  "page": 1,
+  "per_page": 50,
+  "count": 0,
+  "views": [
+      {
+          "id": "5de621f91c204b7f2b36a39f",
+          "title": "Electronic Greeting Card",
+          "summary": "",
+          "description": "",
+          "search_id": "5de66b5c1c204b7f2b36a402",
+          "properties": [],
+          "requires": {},
+          "state": {
+              "4a5add64-8ac7-4ef0-b628-eceb916d7dde": {
+                  "selected_fields": [
+                      "source",
+                      "message"
+                  ],
+                  "static_message_list_id": null,
+                  "titles": {
+                      "widget": {
+                          "4fa26b28-34d5-40bc-99eb-14ffe1600399": "Message Count",
+                          "886d36ce-ed2d-4a4a-8cc8-73939e9b56b0": "All Messages",
+                          "a64204bb-8edc-4ee8-bb2e-859e58a943df": "Ecard created",
+                          "c90ada17-5ede-4408-9f7d-9d2ef1c2170e": "Ecard read",
+                          "829fcfc5-b501-4f38-98fe-17a56c94f76c": "Ecard created",
+                          "a8b5a91f-c601-4d1d-9db6-a48e639db479": "Errors"
+                      }
+                  },
+                  "widgets": [
+                      {
+                          "id": "886d36ce-ed2d-4a4a-8cc8-73939e9b56b0",
+                          "type": "messages",
+                          "filter": null,
+                          "config": {
+                              "fields": [
+                                  "timestamp",
+                                  "source"
+                              ],
+                              "show_message_row": true
+                          }
+                      },
+                      {
+                          "id": "829fcfc5-b501-4f38-98fe-17a56c94f76c",
+                          "type": "messages",
+                          "filter": "created",
+                          "config": {
+                              "fields": [
+                                  "timestamp",
+                                  "source"
+                              ],
+                              "show_message_row": true
+                          }
+                      },
+                      {
+                          "id": "a8b5a91f-c601-4d1d-9db6-a48e639db479",
+                          "type": "aggregation",
+                          "filter": "level:(<=3)",
+                          "config": {
+                              "row_pivots": [],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": "Message Count"
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "numeric",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      },
+                      {
+                          "id": "c90ada17-5ede-4408-9f7d-9d2ef1c2170e",
+                          "type": "aggregation",
+                          "filter": "\"is being read\"",
+                          "config": {
+                              "row_pivots": [],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": "Message Count"
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "numeric",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      },
+                      {
+                          "id": "a64204bb-8edc-4ee8-bb2e-859e58a943df",
+                          "type": "aggregation",
+                          "filter": "created",
+                          "config": {
+                              "row_pivots": [],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": "Message Count"
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "numeric",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      },
+                      {
+                          "id": "4fa26b28-34d5-40bc-99eb-14ffe1600399",
+                          "type": "aggregation",
+                          "filter": null,
+                          "config": {
+                              "row_pivots": [
+                                  {
+                                      "field": "timestamp",
+                                      "type": "time",
+                                      "config": {
+                                          "interval": {
+                                              "type": "auto",
+                                              "scaling": null
+                                          }
+                                      }
+                                  }
+                              ],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": null
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "bar",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      }
+                  ],
+                  "widget_mapping": {
+                      "886d36ce-ed2d-4a4a-8cc8-73939e9b56b0": [
+                          "d89a6667-3319-4313-9bae-cfd528489157"
+                      ],
+                      "829fcfc5-b501-4f38-98fe-17a56c94f76c": [
+                          "4433195e-0ea6-4bd9-bd95-25c365d75520"
+                      ],
+                      "c90ada17-5ede-4408-9f7d-9d2ef1c2170e": [
+                          "d74cc2a3-9413-4a01-a1ff-af8836974834"
+                      ],
+                      "a64204bb-8edc-4ee8-bb2e-859e58a943df": [
+                          "ef334be0-0e93-4436-b951-e4323a258488"
+                      ],
+                      "4fa26b28-34d5-40bc-99eb-14ffe1600399": [
+                          "2b525a2e-7286-4bf4-9c10-136e206ac69a"
+                      ],
+                      "a8b5a91f-c601-4d1d-9db6-a48e639db479": [
+                          "a8e231e1-63b3-463a-bbe8-9970486d12f1"
+                      ]
+                  },
+                  "positions": {
+                      "886d36ce-ed2d-4a4a-8cc8-73939e9b56b0": {
+                          "col": 1,
+                          "row": 6,
+                          "height": 6,
+                          "width": "Infinity"
+                      },
+                      "829fcfc5-b501-4f38-98fe-17a56c94f76c": {
+                          "col": 7,
+                          "row": 1,
+                          "height": 3,
+                          "width": 6
+                      },
+                      "c90ada17-5ede-4408-9f7d-9d2ef1c2170e": {
+                          "col": 4,
+                          "row": 1,
+                          "height": 2,
+                          "width": 3
+                      },
+                      "a64204bb-8edc-4ee8-bb2e-859e58a943df": {
+                          "col": 1,
+                          "row": 1,
+                          "height": 2,
+                          "width": 3
+                      },
+                      "4fa26b28-34d5-40bc-99eb-14ffe1600399": {
+                          "col": 1,
+                          "row": 4,
+                          "height": 2,
+                          "width": "Infinity"
+                      },
+                      "a8b5a91f-c601-4d1d-9db6-a48e639db479": {
+                          "col": 1,
+                          "row": 3,
+                          "height": 1,
+                          "width": 3
+                      }
+                  },
+                  "formatting": {
+                      "highlighting": []
+                  }
+              }
+          },
+          "dashboard_state": {
+              "widgets": {},
+              "positions": {}
+          },
+          "owner": "ckoenig",
+          "created_at": "2019-12-03T08:47:42.973Z"
+      },
+      {
+          "id": "61d40f7eff841f6de0944712",
+          "title": "HR dashboard",
+          "summary": "HR dashboard app",
+          "description": "https://myhrdata.tmp.lu",
+          "search_id": "61d45df6ff841f6de094473f",
+          "properties": [],
+          "requires": {},
+          "state": {
+              "fbd09225-6a63-45a2-9d37-c69852d9431e": {
+                  "selected_fields": [
+                      "source",
+                      "message"
+                  ],
+                  "static_message_list_id": null,
+                  "titles": {
+                      "widget": {
+                          "6aa5bdb3-9b33-4145-8957-78afe5e8cd06": "Message Count",
+                          "c5c8f515-4469-4890-81c3-5c65499c4639": "All Messages",
+                          "592b8033-c727-4e07-893e-f7852c3afe03": "Errors",
+                          "705314cd-f9b9-49ac-a998-55fca2faf8d7": "Errors"
+                      },
+                      "tab": {
+                          "title": "main"
+                      }
+                  },
+                  "widgets": [
+                      {
+                          "id": "6aa5bdb3-9b33-4145-8957-78afe5e8cd06",
+                          "type": "aggregation",
+                          "filter": null,
+                          "config": {
+                              "row_pivots": [
+                                  {
+                                      "field": "timestamp",
+                                      "type": "time",
+                                      "config": {
+                                          "interval": {
+                                              "type": "auto",
+                                              "scaling": null
+                                          }
+                                      }
+                                  }
+                              ],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": null
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "bar",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      },
+                      {
+                          "id": "705314cd-f9b9-49ac-a998-55fca2faf8d7",
+                          "type": "messages",
+                          "filter": "level:(<=3)",
+                          "config": {
+                              "fields": [
+                                  "timestamp",
+                                  "username",
+                                  "request_path"
+                              ],
+                              "show_message_row": true
+                          }
+                      },
+                      {
+                          "id": "592b8033-c727-4e07-893e-f7852c3afe03",
+                          "type": "aggregation",
+                          "filter": "level:(<=3)",
+                          "config": {
+                              "row_pivots": [
+                                  {
+                                      "field": "timestamp",
+                                      "type": "time",
+                                      "config": {
+                                          "interval": {
+                                              "type": "auto",
+                                              "scaling": null
+                                          }
+                                      }
+                                  }
+                              ],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": "Message Count"
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "bar",
+                              "visualization_config": {
+                                  "barmode": "group"
+                              },
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      },
+                      {
+                          "id": "c5c8f515-4469-4890-81c3-5c65499c4639",
+                          "type": "messages",
+                          "filter": "",
+                          "config": {
+                              "fields": [
+                                  "timestamp",
+                                  "request_path",
+                                  "username",
+                                  "level"
+                              ],
+                              "show_message_row": true
+                          }
+                      }
+                  ],
+                  "widget_mapping": {
+                      "c5c8f515-4469-4890-81c3-5c65499c4639": [
+                          "12859d91-807f-43f7-9b4e-840879ad7afc"
+                      ],
+                      "6aa5bdb3-9b33-4145-8957-78afe5e8cd06": [
+                          "727ad1e8-8c8b-44f5-af92-c372a1046f3a"
+                      ],
+                      "705314cd-f9b9-49ac-a998-55fca2faf8d7": [
+                          "1e81754d-5147-4eaf-8e41-10d282ee8b03"
+                      ],
+                      "592b8033-c727-4e07-893e-f7852c3afe03": [
+                          "0c268d65-91c0-4dd4-887f-ce60f5bb462c"
+                      ]
+                  },
+                  "positions": {
+                      "c5c8f515-4469-4890-81c3-5c65499c4639": {
+                          "col": 1,
+                          "row": 6,
+                          "height": 6,
+                          "width": "Infinity"
+                      },
+                      "6aa5bdb3-9b33-4145-8957-78afe5e8cd06": {
+                          "col": 1,
+                          "row": 4,
+                          "height": 2,
+                          "width": "Infinity"
+                      },
+                      "592b8033-c727-4e07-893e-f7852c3afe03": {
+                          "col": 1,
+                          "row": 1,
+                          "height": 3,
+                          "width": 4
+                      },
+                      "705314cd-f9b9-49ac-a998-55fca2faf8d7": {
+                          "col": 5,
+                          "row": 1,
+                          "height": 3,
+                          "width": 6
+                      }
+                  },
+                  "formatting": {
+                      "highlighting": []
+                  }
+              }
+          },
+          "dashboard_state": {
+              "widgets": {},
+              "positions": {}
+          },
+          "owner": "ckoenig",
+          "created_at": "2022-01-04T09:05:29.204Z"
+      },
+      {
+          "id": "6229b65b94505913fdb6f1fb",
+          "title": "Travel-IBE API stats",
+          "summary": "Monitor performance issues on travel-ibe API.",
+          "description": "",
+          "search_id": "6229b64b94505913fdb6f1f5",
+          "properties": [],
+          "requires": {},
+          "state": {
+              "867b33a9-c850-481e-9f70-62650439b2b8": {
+                  "selected_fields": [
+                      "source",
+                      "message"
+                  ],
+                  "static_message_list_id": null,
+                  "titles": {
+                      "widget": {
+                          "7469d18e-8429-4ab3-ad8a-e32dcfb8e0d0": "Errors 5XX on travel-ibe",
+                          "6870f5dd-ee67-4ce1-b43f-15cef4a18033": "All Messages",
+                          "a7eabd9a-f20c-4a02-ab62-7456c5a367be": "Requests on travel-ibe",
+                          "6a02a887-9ef1-49df-a88a-da777a7a6367": "Errors 5XX on travel-ibe (copy)"
+                      }
+                  },
+                  "widgets": [
+                      {
+                          "id": "a7eabd9a-f20c-4a02-ab62-7456c5a367be",
+                          "type": "aggregation",
+                          "filter": "mule_app_name:travel-ibe",
+                          "config": {
+                              "row_pivots": [
+                                  {
+                                      "field": "timestamp",
+                                      "type": "time",
+                                      "config": {
+                                          "interval": {
+                                              "type": "auto",
+                                              "scaling": null
+                                          }
+                                      }
+                                  }
+                              ],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": null
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "bar",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      },
+                      {
+                          "id": "7469d18e-8429-4ab3-ad8a-e32dcfb8e0d0",
+                          "type": "aggregation",
+                          "filter": "http_status:(>=500) && mule_app_name:travel-ibe",
+                          "config": {
+                              "row_pivots": [
+                                  {
+                                      "field": "timestamp",
+                                      "type": "time",
+                                      "config": {
+                                          "interval": {
+                                              "type": "auto",
+                                              "scaling": null
+                                          }
+                                      }
+                                  }
+                              ],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": null
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "bar",
+                              "visualization_config": {
+                                  "barmode": "group"
+                              },
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      }
+                  ],
+                  "widget_mapping": {
+                      "7469d18e-8429-4ab3-ad8a-e32dcfb8e0d0": [
+                          "4042fe25-ac59-4848-ab91-60a68746ac46"
+                      ],
+                      "a7eabd9a-f20c-4a02-ab62-7456c5a367be": [
+                          "ba468b6c-b605-4aa2-98fa-943122e57879"
+                      ]
+                  },
+                  "positions": {
+                      "7469d18e-8429-4ab3-ad8a-e32dcfb8e0d0": {
+                          "col": 1,
+                          "row": 7,
+                          "height": 2,
+                          "width": "Infinity"
+                      },
+                      "a7eabd9a-f20c-4a02-ab62-7456c5a367be": {
+                          "col": 1,
+                          "row": 5,
+                          "height": 2,
+                          "width": "Infinity"
+                      },
+                      "6a02a887-9ef1-49df-a88a-da777a7a6367": {
+                          "col": 1,
+                          "row": 1,
+                          "height": 4,
+                          "width": 4
+                      }
+                  },
+                  "formatting": null
+              }
+          },
+          "dashboard_state": {
+              "widgets": {},
+              "positions": {}
+          },
+          "owner": "ckoenig",
+          "created_at": "2022-03-10T08:24:41.988Z"
+      },
+      {
+          "id": "64f1f3ed7c5f700a1eab7733",
+          "title": "pnr and loyalty",
+          "summary": "",
+          "description": "",
+          "search_id": "64f1f3c57c5f700a1eab772f",
+          "properties": [],
+          "requires": {},
+          "state": {
+              "e5542976-74c1-4ae5-a908-99b5b7bb3583": {
+                  "selected_fields": [
+                      "source",
+                      "message"
+                  ],
+                  "static_message_list_id": null,
+                  "titles": {
+                      "widget": {
+                          "1b013b92-f26e-4032-995c-7f6391af005f": "Message Count",
+                          "c984310c-b1fe-40b7-99d5-95ec17cf068a": "All Messages"
+                      },
+                      "tab": {
+                          "title": "main"
+                      }
+                  },
+                  "widgets": [
+                      {
+                          "id": "c984310c-b1fe-40b7-99d5-95ec17cf068a",
+                          "type": "messages",
+                          "filter": null,
+                          "config": {
+                              "fields": [
+                                  "timestamp",
+                                  "source"
+                              ],
+                              "show_message_row": true
+                          }
+                      },
+                      {
+                          "id": "1b013b92-f26e-4032-995c-7f6391af005f",
+                          "type": "aggregation",
+                          "filter": null,
+                          "config": {
+                              "row_pivots": [
+                                  {
+                                      "field": "timestamp",
+                                      "type": "time",
+                                      "config": {
+                                          "interval": {
+                                              "type": "auto",
+                                              "scaling": null
+                                          }
+                                      }
+                                  }
+                              ],
+                              "column_pivots": [],
+                              "series": [
+                                  {
+                                      "config": {
+                                          "name": null
+                                      },
+                                      "function": "count()"
+                                  }
+                              ],
+                              "sort": [],
+                              "visualization": "bar",
+                              "visualization_config": null,
+                              "formatting_settings": null,
+                              "rollup": true
+                          }
+                      }
+                  ],
+                  "widget_mapping": {
+                      "1b013b92-f26e-4032-995c-7f6391af005f": [
+                          "20d24b17-a69a-4609-b560-cd419875b958"
+                      ],
+                      "c984310c-b1fe-40b7-99d5-95ec17cf068a": [
+                          "9bc6a9a8-b23a-4390-94df-7a69207a3847"
+                      ]
+                  },
+                  "positions": {
+                      "1b013b92-f26e-4032-995c-7f6391af005f": {
+                          "col": 1,
+                          "row": 1,
+                          "height": 2,
+                          "width": "Infinity"
+                      },
+                      "c984310c-b1fe-40b7-99d5-95ec17cf068a": {
+                          "col": 1,
+                          "row": 3,
+                          "height": 6,
+                          "width": "Infinity"
+                      }
+                  },
+                  "formatting": null
+              }
+          },
+          "dashboard_state": {
+              "widgets": {},
+              "positions": {}
+          },
+          "owner": "ckoenig",
+          "created_at": "2023-09-01T14:22:47.128Z"
+      }
+  ]
+}

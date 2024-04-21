@@ -1,0 +1,114 @@
+{
+  "total": 4,
+  "index_sets": [
+      {
+          "id": "58c66243fc4bf609e13a4291",
+          "title": "Default index set",
+          "description": "The Graylog default index set",
+          "index_prefix": "graylog",
+          "shards": 4,
+          "replicas": 0,
+          "rotation_strategy_class": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategy",
+          "rotation_strategy": {
+              "type": "org.graylog2.indexer.rotation.strategies.AutoValue_TimeBasedRotationStrategyConfig",
+              "type": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategyConfig",
+              "rotation_period": "P1W"
+          },
+          "retention_strategy_class": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy",
+          "retention_strategy": {
+              "type": "org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig",
+              "type": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig",
+              "max_number_of_indices": 20
+          },
+          "creation_date": "2017-03-13T09:11:31.319Z",
+          "index_analyzer": "standard",
+          "index_optimization_max_num_segments": 1,
+          "index_optimization_disabled": false,
+          "field_type_refresh_interval": 5000,
+          "writable": true,
+          "default": true
+      },
+      {
+          "id": "5ddf82da49cc2300126b7ee2",
+          "title": "Graylog Events",
+          "description": "Stores Graylog events.",
+          "index_prefix": "gl-events",
+          "shards": 4,
+          "replicas": 0,
+          "rotation_strategy_class": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategy",
+          "rotation_strategy": {
+              "type": "org.graylog2.indexer.rotation.strategies.AutoValue_TimeBasedRotationStrategyConfig",
+              "type": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategyConfig",
+              "rotation_period": "P1M"
+          },
+          "retention_strategy_class": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy",
+          "retention_strategy": {
+              "type": "org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig",
+              "type": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig",
+              "max_number_of_indices": 12
+          },
+          "creation_date": "2019-11-28T08:18:34.533Z",
+          "index_analyzer": "standard",
+          "index_optimization_max_num_segments": 1,
+          "index_optimization_disabled": false,
+          "field_type_refresh_interval": 60000,
+          "writable": true,
+          "default": false
+      },
+      {
+          "id": "5ddf82da49cc2300126b7ee5",
+          "title": "Graylog System Events",
+          "description": "Stores Graylog system events.",
+          "index_prefix": "gl-system-events",
+          "shards": 4,
+          "replicas": 0,
+          "rotation_strategy_class": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategy",
+          "rotation_strategy": {
+              "type": "org.graylog2.indexer.rotation.strategies.AutoValue_TimeBasedRotationStrategyConfig",
+              "type": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategyConfig",
+              "rotation_period": "P1M"
+          },
+          "retention_strategy_class": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy",
+          "retention_strategy": {
+              "type": "org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig",
+              "type": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig",
+              "max_number_of_indices": 12
+          },
+          "creation_date": "2019-11-28T08:18:34.574Z",
+          "index_analyzer": "standard",
+          "index_optimization_max_num_segments": 1,
+          "index_optimization_disabled": false,
+          "field_type_refresh_interval": 60000,
+          "writable": true,
+          "default": false
+      },
+      {
+          "id": "646da579b9c3a20012f845c9",
+          "title": "index-one-month",
+          "description": "Short life index for Drupal logs and HTTP access logs in general.",
+          "index_prefix": "drupal",
+          "shards": 4,
+          "replicas": 0,
+          "rotation_strategy_class": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategy",
+          "rotation_strategy": {
+              "type": "org.graylog2.indexer.rotation.strategies.AutoValue_TimeBasedRotationStrategyConfig",
+              "type": "org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategyConfig",
+              "rotation_period": "P1W"
+          },
+          "retention_strategy_class": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategy",
+          "retention_strategy": {
+              "type": "org.graylog2.indexer.retention.strategies.AutoValue_DeletionRetentionStrategyConfig",
+              "type": "org.graylog2.indexer.retention.strategies.DeletionRetentionStrategyConfig",
+              "max_number_of_indices": 4
+          },
+          "creation_date": "2023-05-24T05:49:45.728Z",
+          "index_analyzer": "standard",
+          "index_optimization_max_num_segments": 1,
+          "index_optimization_disabled": false,
+          "field_type_refresh_interval": 5000,
+          "writable": true,
+          "default": false
+      }
+  ],
+  "stats": {}
+}

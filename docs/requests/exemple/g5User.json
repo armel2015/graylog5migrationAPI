@@ -1,0 +1,103 @@
+{
+  "users": [
+    {
+      "id": "64ad50903cca2300115d8f0c",
+      "username": "awakamtalla",
+      "email": "armel@group.lu",
+      "full_name": "Armel Wakam-Talla",
+      "permissions": [
+        "users:tokencreate:awakamtalla",
+        "users:passwordchange:awakamtalla",
+        "users:edit:awakamtalla",
+        "users:tokenlist:awakamtalla",
+        "dashboards:read:653f577c3cca2300116422b3",
+        "users:tokenremove:awakamtalla",
+        "dashboards:edit:653f577c3cca2300116422b3",
+        "streams:read:5ac7543afc4bf609f3b2f178",
+        "*",
+        "clusterconfigentry:read",
+        "indexercluster:read",
+        "messagecount:read",
+        "journal:read",
+        "messages:analyze",
+        "inputs:read",
+        "metrics:read",
+        "savedsearches:edit",
+        "fieldnames:read",
+        "buffers:read",
+        "system:read",
+        "savedsearches:create",
+        "jvmstats:read",
+        "decorators:read",
+        "throughput:read",
+        "savedsearches:read",
+        "messages:read"
+      ],
+      "preferences": {
+        "updateUnfocussed": false,
+        "enableSmartSearch": true
+      },
+      "timezone": "Europe/tmpembourg",
+      "session_timeout_ms": 28800000,
+      "external": true,
+      "startpage": null,
+      "roles": [
+        "Admin",
+        "Reader"
+      ],
+      "read_only": false,
+      "session_active": true,
+      "last_activity": "2024-03-21T15:39:56.471+0000",
+      "client_address": "10.43.1.5"
+    },
+    {
+      "id": "655b64d33cca230011946808",
+      "username": "ledwards",
+      "email": "luke@group.lu",
+      "full_name": "Luke Martin Edwards",
+      "permissions": [
+        "users:tokencreate:ledwards",
+        "users:tokenremove:ledwards",
+        "users:edit:ledwards",
+        "users:passwordchange:ledwards",
+        "users:tokenlist:ledwards",
+        "streams:read:5d8c7bc449cc23000cd68114",
+        "streams:read:5ac7543afc4bf609f3b2f178",
+        "*",
+        "clusterconfigentry:read",
+        "indexercluster:read",
+        "messagecount:read",
+        "journal:read",
+        "messages:analyze",
+        "inputs:read",
+        "metrics:read",
+        "savedsearches:edit",
+        "fieldnames:read",
+        "buffers:read",
+        "system:read",
+        "savedsearches:create",
+        "jvmstats:read",
+        "decorators:read",
+        "throughput:read",
+        "savedsearches:read",
+        "messages:read"
+      ],
+      "preferences": {
+        "updateUnfocussed": false,
+        "enableSmartSearch": true
+      },
+      "timezone": "Europe/tmpembourg",
+      "session_timeout_ms": 28800000,
+      "external": true,
+      "startpage": null,
+      "roles": [
+        "Admin",
+        "Reader"
+      ],
+      "read_only": false,
+      "session_active": true,
+      "last_activity": "2024-03-21T15:39:27.734+0000",
+      "client_address": "10.43.1.5"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "username": "fhiben",
+  "password" : "123@456",
+  "first_name": "francois",
+  "last_name": "hiben",
+  "email": "francois@group.lu",
+  "permissions": [],
+  "timezone": "Europe/tmpembourg",
+  "session_timeout_ms": "28800000",
+  "startpage": null,
+  "roles": []
+}
